@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ru">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="{% static 'land/assetsById/1089/assets/images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{% static 'land/assetsById/1089/assets/images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{% static 'land/assetsById/1089/assets/images/favicon/favicon-16x16.png' %}">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description"
+          content="Профессиональный ремонт стиральных машин в Тольятти. Быстрое и качественное обслуживание, диагностика и устранение неисправностей любой сложности. Гарантия на все услуги от 6 месяцев.">
+
+    <meta name="keywords" content="диагностика, диагностика без ремонтаб, извлечение посторонних предметов из бака, устранение засора,
+     поиск и устранение течей, разблокировка двери, замена замка двери люка, замена манжеты люка, замена клапана подачи воды, замена шланга слива залива,
+     замена нагревательного элемента, замена патрубков, замена датчика давления, замена датчика температуры, замена датчика хода, восстановление проводки,
+     замена амортизаторов, ремонт двигателя, замена сливного насоса, ремонт или замена бака, ремонт или замена модуля управления, замена подшипников, монтаж и демонтаж встраиваемой техники">
+
+    <!-- Шрифты -->
+    <link rel="preload" href="{% static 'land/assetsById/1089/assets/css/fonts.css' %}" as="font"
+          onload="this.rel='stylesheet'">
+
+    <!-- Библиотеки -->
+    <link rel="stylesheet" href="{% static 'land/assetsById/1089/assets/css/vendors.css' %}">
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="{% static 'land/assetsById/1089/assets/css/style.css' %}">
+
+    <title>Ремонт стиральных машин в г. Тольятти</title>
+
+    <style>
+        /* Активный цвет */
+        body {
+            --active: #0fbdfa;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- Параллакс изображения -->
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-1.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-1.png' %}" class="rellax rellax-img rellax-img-1"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-2.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-2.png' %}" class="rellax rellax-img rellax-img-2"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-3.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-3.png' %}" class="rellax rellax-img rellax-img-3"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-4.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-4.png' %}" class="rellax rellax-img rellax-img-4"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<!-- Главный экран -->
+<header class="header">
+    <div class="header__top-wrapper">
+        <div class="container">
+            <div class="header__top" data-da=".header__mobile-menu,991,last">
+                <div class="header__top-left">
+                    Работаем без выходных <span>с 08:00 до 20:00</span>
+                </div>
+                <div class="header__top-right">
+                    в г. Тольятти
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_fixed">
+        <div class="header__row-wrapper">
+            <div class="container">
+                <div class="header__row">
+                    <a href='#home' class='header__logo'><img style="max-width: 150%;"
+                                                              src="{% static 'other_imgs/logo.png' %}" alt="img"></a>
+                    <div class="header__right">
+                        <div class="header__mobile-menu">
+                            <ul class="menu header__menu">
+                                <li><a href="#breakage">Поломки</a></li>
+                                <li><a href="#price">Прайс-лист</a></li>
+                                <li><a href="#features">Преимущества</a></li>
+                            </ul>
+                        </div>
+                        <a href='tel:+79179651264' class='header__tel'>
+                            <!-- <div class="header__tel-icon">
+                                <svg class='phone'>
+                                    <use xlink:href='land/assetsById/1089/assets/phone/sprite.png#phone'></use>
+                                </svg>
+                            </div> -->
+                            <span>+7 (917) 965-12-64</span>
+                        </a>
+                        <a href='#' class='menu-link'>
+                            <span class='menu-lines'></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__main mobile-bg bg"
+         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/header-bg.jpg' %})">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="header__col header__main-left">
+                    <h1 class="header__title">
+                        Ремонт <span class="br"></span><span>стиральных машин</span> <br>
+                        в г. Тольятти </h1>
+                    <ul class="header__list">
+                        <li>
+                            Диагностика бесплатно
+                        </li>
+                        <li>Свой склад запчастей</li>
+                        <li>Время ремонта – от 30 минут</li>
+                    </ul>
+                    <div class="form header__form">
+                        <form action="/good/" method="post" class="sltop__form ">
+                            {% csrf_token %}
+                            <div class='input-wrapper'>
+                                    <span>
+                                        <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'
+                                               required>
+                                    </span>now
+                                <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
+                            </div>
+                        </form>
+                        <small>
+                            Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных
+                            данных
+                        </small>
+                    </div>
+                </div>
+                <div class="header__col">
+                    <div class="header__circle">
+                        <div class="header__icon">
+                            <svg class='settings'>
+                                <use xlink:href="{% static 'land/assetsById/1089/assets/settings/sprite.svg' %}#settings"></use>
+                            </svg>
+                        </div>
+                        <div class="header__img">
+                            <picture>
+                                <source srcset="{% static 'land/assetsById/1089/assets/images/washer/header-img.webp' %}"
+                                        type="image/webp">
+                                <img src="{% static 'land/assetsById/1089/assets/images/washer/header-img.png' alt='img' %}">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Преимущества -->
+<div class="advantages">
+    <div class="container">
+        <div class="advantages-wrapper row">
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='gear'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/gear/sprite.svg' %} #gear"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Используем только оригинальные запчасти
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='chip'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/chip/sprite.svg' %} #chip"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Заменяем только нерабочие детали
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='calendar'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/calendar/sprite.svg' %} #calendar"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Приступаем к работе в день обращения
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='gem'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/gem/sprite.svg' %} #gem"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Мастера с опытом от 5&nbsp;лет
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Бренды -->
+<div class="brands section-padding section-padding-top">
+    <div class="swiper-container" id="js-carousel">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/2.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/2.png' alt='img' %}"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/3.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/3.png' %}" alt="img"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/4.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/4.png' %}" alt="img"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/5.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/5.png' %}" alt="img"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/6.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/6.png' %}" alt="img"
+                         class="brands__img">
+                </picture>
+            </div>
+            <!--                <div class="swiper-slide" style="text-align: center">-->
+            <!--                    <picture>-->
+            <!--                        <source srcset="land/assetsById/1089/assets/images/washer/brands/7.webp" type="image/webp">-->
+            <!--                        <img src="land/assetsById/1089/assets/images/washer/brands/7.png" alt="img" class="brands__img">-->
+            <!--                    </picture>-->
+            <!--                </div>-->
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/8.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/8.png' %}" alt="img"
+                         class="brands__img">
+                </picture>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Выберите неисправность -->
+<section id="breakage" class="breakage section-padding">
+    <div class="container">
+        <h2 class="breakage__title title">Выберите <span>неисправность</span></h2>
+        <div class="row breakage-wrapper">
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_1">
+                    <picture>
+                        <source srcset="{% static 'land/assetsById/1089/assets/images/washer/breakage/1.webp' %}"
+                                type="image/webp">
+                        <img src="{% static 'land/assetsById/1089/assets/images/washer/breakage/1.png' %}"
+                             class="breakage__item-img" alt="img" style="bottom: 0">
+                    </picture>
+                    <div class="breakage__item-title">Не греет воду</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена фильтра сливного насоса</li>
+                        <li>Замена датчика уровня воды</li>
+                        <li>Замена заливного клапана</li>
+                        <li>Устранение засора</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 485 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_2">
+                    <div class="breakage__item-title">Не сливает воду</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена фильтра сливного насоса</li>
+                        <li>Замена датчика уровня воды</li>
+                        <li>Замена помпы</li>
+                        <li>Устранение засора</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 495 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_3">
+                    <div class="breakage__item-title">Не отжимает</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена амортизаторов</li>
+                        <li>Замена манжеты</li>
+                        <li>Замена фильтра залива воды</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 550 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_4">
+                    <div class="breakage__item-title">Шумит и вибрирует</div>
+                    <ul class="breakage__item-list">
+                        <li>Извлечение посторонних предметов</li>
+                        <li>Замена ремня привода барабана</li>
+                        <li>Замена манжеты</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 605 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_5">
+                    <div class="breakage__item-title">Не включается</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена ТЭНа</li>
+                        <li>Замена электронного модуля</li>
+                        <li>Замена сетевого шнура</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 585 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_6">
+                    <picture>
+                        <source srcset="{% static 'land/assetsById/1089/assets/images/washer/breakage/2.webp ' %}"
+                                type="image/webp">
+                        <img src="{% static 'land/assetsById/1089/assets/images/washer/breakage/2.png ' %}"
+                             class="breakage__item-img" alt="img">
+                    </picture>
+                    <div class="breakage__item-title">Не заливает воду</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена фильтра залива воды</li>
+                        <li>Замена датчика уровня воды</li>
+                        <li>Замена сетевого шнура</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 585 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_7">
+                    <div class="breakage__item-title">Не вращается барабан</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена датчика уровня воды</li>
+                        <li>Устранение засора</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 495 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item ">
+                    <div class="breakage__item-title">Протекает</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена фильтра залива воды</li>
+                        <li>Замена датчика уровня воды</li>
+                        <li>Замена ручек, петель</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 530 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_9">
+                    <div class="breakage__item-title">Не открывается люк</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена устройства блокировки люка</li>
+                        <li>Замена температурного датчика</li>
+                        <li>Замена ручек, петель</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 545 ₽</div>
+                </div>
+            </div>
+            <div id="form" class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_8">
+                    <div class="breakage__form">
+                        <div class="breakage__form-title">Оставьте заявку</div>
+                        <div class="breakage__form-subtitle">И мы перезвоним в течение 2-х минут</div>
+                        <div class="form">
+                            <form action="/good/" method="post" class="sltop__form ">
+                                {% csrf_token %}
+                                <div class='input-wrapper'>
+                                        <span>
+                                            <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'
+                                                   required>
+                                        </span>
+                                    <button type='submit' class='submit darken-hover'>Оставить заявку</button>
+                                </div>
+                            </form>
+                            <small>
+                                Нажимая кнопку “Оставить заявку”, я соглашаюсь на обработку персональных
+                                данных
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Почему стоит выбрать нас? -->
+<section id="features" class="features section-padding section-padding-bottom">
+    <div class="container">
+        <h2 class="features__title title">Почему стоит выбрать нас?</h2>
+        <div class="features__row">
+            <div class="features__img">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/features-img.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/features-img.png' %}" alt="img">
+                </picture>
+            </div>
+            <div class="features-wrapper">
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='gear'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/gear/sprite.svg' %} #gear"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Используем только оригинальные запчасти от производителя</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='clock'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/clock/sprite.svg' %} #clock"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Срочный ремонт – от 2-х часов</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='chip'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/chip/sprite.svg' %} #chip"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">У нас собственный склад: все детали всегда в наличии</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='gem'>
+                            <use xlink:href=" {% static 'land/assetsById/1089/assets/gem/sprite.svg' %} #gem"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Опытные мастера: у каждого специалиста более 5 лет опыта</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='free'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/free/sprite.svg' %} #free"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">
+                        Диагностика поломки бесплатная
+                    </div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='pay'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/pay/sprite.svg' %} #pay"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Наличный и безналичный расчет
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Доставка техники курьером -->
+<section id="offer" class="offer">
+    <picture>
+        <source srcset="{% static 'land/assetsById/1089/assets/images/offer-bg.webp' %}" type="image/webp">
+        <img src="{% static 'land/assetsById/1089/assets/images/offer-bg.jpg' %}" class="offer__bg" alt="img">
+    </picture>
+    <div class="container">
+        <div class="offer__col">
+            <h2 class="offer__title" style="font-size: 29px">
+                90% поломок ремонтируем на дому
+                в день обращения,
+                для всех остальных случаев -
+                доставка в сервисный центр
+                и обратно
+            </h2>
+            <div class="offer__subtitle">
+                В пределах г. Москва
+            </div>
+            <div class="form offer__form">
+                {% csrf_token %}
+                <form action="/good/" method="post" class="sltop__form ">
+                    <div class='input-wrapper'>
+                            <span>
+                                <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон' required>
+                            </span>now
+                        <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
+                    </div>
+                </form>
+                <small>
+                    Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных данных
+                </small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Цены на услуги -->
+<section id="price" class="price section-padding-top section-padding-bottom">
+    <div class="container">
+        <h2 class="price__title title">Цены на услуги</h2>
+        <div class="price-wrapper">
+            <div class="price__item">
+                <div class="price__item-left">Диагностика</div>
+                <div class="price__item-right">
+                    Бесплатно
+                </div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена фильтра сливного насоса</div>
+                <div class="price__item-right">от 770 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена датчика уровня воды</div>
+                <div class="price__item-right">от 880 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена заливного клапана</div>
+                <div class="price__item-right">от 575 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Устранение засора</div>
+                <div class="price__item-right">от 495 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена помпы</div>
+                <div class="price__item-right">от 770 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена амортизаторов</div>
+                <div class="price__item-right">от 825 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена манжеты</div>
+                <div class="price__item-right">от 715 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена фильтра залива воды</div>
+                <div class="price__item-right">от 550 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Извлечение посторонних предметов</div>
+                <div class="price__item-right">от 770 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена ремня привода барабана</div>
+                <div class="price__item-right">от 605 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена ТЭНа</div>
+                <div class="price__item-right">от 715 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена электронного модуля</div>
+                <div class="price__item-right">от 825 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена сетевого шнура</div>
+                <div class="price__item-right">от 685 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена ручек, петель</div>
+                <div class="price__item-right">от 540 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена устройства блокировки люка</div>
+                <div class="price__item-right">от 825 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена температурного датчика</div>
+                <div class="price__item-right">от 495 ₽</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Консультация -->
+<div class="consultation">
+    <div class="container">
+        <div class="consultation-wrapper">
+            <div class="consultation__img">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/consultation-img.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/consultation-img.png' %}" alt="img">
+                </picture>
+            </div>
+            <div class="consultation__text">Сломалась стиральная машина? Хотите проконсультироваться по вопросам
+                ремонта?
+                <br>
+                Звоните нам по телефону <a href="tel:+79179651264">+7 (917) 965-12-64</a> или
+                <span data-toggle='modal' data-target='#popup-call'>оставьте заявку</span> на сайте
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Скидки -->
+<section id="discount" class="discount mobile-bg bg"
+         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
+    <div class="container">
+        <div class="discount-wrapper">
+            <h2 class="discount__title title title_white">Скидка 20% <br> до <span class="day">24</span>&nbsp;<span
+                    class="month"></span>
+            </h2>
+            <div class="discount__subtitle">До конца акции остается <br>
+                <div class="hours" id="hours">
+                    <span class="number"></span>
+                    <span class="text">часов</span>
+                </div>
+                <div class="minutes" id="minutes">
+                    <span class="number"></span>
+                    <span class="text">минут</span>
+                </div>
+            </div>
+            <div class="form discount__form">
+                <form action="/good/" method="post" class="sltop__form ">
+                    <input type="hidden" name="direction_id" value="2">
+                    <input type="hidden" name="offer_id" value="4">
+                    <div class='input-wrapper'>
+                        {% csrf_token %}
+                        <span>
+                                <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон' required>
+                            </span>now
+                        <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
+                    </div>
+                </form>
+                <small>
+                    Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных данных
+                </small>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Карта -->
+<section id="contact" class="contact section-padding-top">
+    <div class="container">
+        <h2 class="contact__title title">Работаем по всему Тольятти и Самарской области <br> <span>* Выезд в область
+                    по
+                    договоренности</span></h2>
+    </div>
+    <!--        <div class="map" id="yamap" style="background: #f2f2f2;">-->
+    <!--            <script type="text/javascript" charset="utf-8" async-->
+    <!--                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa5431f15352c671ada01cf1515a495a5c978e950072b38f63438b4147315b708&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>-->
+    <!--        </div>-->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1225645.241031237!2d49.0394147040958!3d53.1310471042625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4166195fcf54adbb%3A0x72ace821464d4d98!2z0KHQsNC80LDRgNGB0LrQsNGPINC-0LHQuy4!5e0!3m2!1sru!2sru!4v1728337443014!5m2!1sru!2sru"
+            width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-wrapper">
+            <div class="footer__logo">
+                <a href='#home' class='header__logo'><img style="max-width: 30%; "
+                                                          src="{% static 'other_imgs/logo.png' %}" alt="img"></a>
+            </div>
+            <div class="footer__right">
+                <a href='tel:+79179651264' class='header__tel'>
+                    <!--                                <div class="header__tel-icon">-->
+                    <!--                                    <svg class='phone'>-->
+                    <!--                                        <use xlink:href='land/assetsById/1089/assets/phone/sprite.png#phone'></use>&ndash;&gt;-->
+                    <!--                                    </svg>-->
+                    <!--                                </div>-->
+                    <span>+7 (917) 965-12-64</span>
+                </a>
+                <a href="#home" class="footer__up scroll">
+                    <svg class='up'>
+                        <use xlink:href="{% static 'land/assetsById/1089/assets/up/sprite.svg' %} #up"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Заказать звонок -->
+<div class="modal  popup popup-call" id="popup-call" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup__dialog" role="document">
+        <div class="modal-content popup__content">
+            <div class="popup__close close" data-dismiss="modal">&times;</div>
+            <div class="popup__title">Оставьте заявку</div>
+            <div class="popup__subtitle">Мы свяжемся с Вами в течение 1 минуты</div>
+            <form action="/good/" method="post" class="sltop__form popup__form form">
+                {% csrf_token %}
+                <span style="display: none;">
+                        <input type="hidden" class="modal-info">
+                    </span>
+                <span>
+                        <input name="phone" class="phone-input" maxlength="16" type="tel" placeholder="Ваш телефон"
+                               required>
+                    </span>
+                <button type="submit" class="submit darken-hover">Вызвать мастера</button>
+                <small>
+                    Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных данных
+                </small>
+
+                <input type="hidden" name="work" value="на сайте есть акция - Скидка 20%">
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Окно благодарности -->
+<div class="modal popup popup-thank" id="popup-thank" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup__dialog" role="document">
+        <div class="modal-content popup__content">
+            <div class="popup__close close" data-dismiss="modal" onclick="closePopup()">&times;</div>
+            <div class="popup__title">Заявка отправлена</div>
+            <div class="popup__subtitle">Мы свяжемся с Вами в течение 1 минуты</div>
+
+            <button onclick="closePopup()" class="submit darken-hover popup-thank__close">Ок</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- Общие скрипты -->
+<script src="{% static 'land/assetsById/1089/assets/js/vendors.js' %}"></script>
+
+
+<!-- Основной js файл -->
+<script src="{% static 'land/assetsById/1089/assets/js/script.js' %}"></script>
+
+<style>
+    #yamap,
+    .yamap-psh {
+        overflow: hidden;
+        min-height: 490px;
+    }
+</style>
+
+
+<script>
+    var thread = {
+        "id": 0,
+        "type": 2,
+        "idp": 0,
+        "is_pm": 0,
+        "tool_type": 1,
+        "tool_id": 1089,
+        "data": {"city_id": [0], "tel": "+7 (111) 111-11-11", "new_offer_id": 4, "direction_id": 2}
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('.sltop__form');
+
+        forms.forEach(form => {
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                const formData = new FormData(form);
+                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-CSRFToken': csrfToken,
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    });
+                    const data = await response.json();
+                    if (response.ok && data.success) {
+                        showPopup();
+                        form.reset();
+                    } else {
+                        console.error('Ошибка:', data.message);
+                    }
+                } catch (error) {
+                    console.error('Ошибка при отправке:', error);
+                }
+            });
+        });
+
+        function showPopup() {
+            const popup = document.getElementById('popup-thank');
+            popup.style.display = 'block';
+        }
+    });
+
+    function closePopup() {
+        const popup = document.getElementById('popup-thank');
+        popup.style.display = 'none';
+    }
+
+</script>
+
+
+<script src="cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
+<script src="cdn.jsdelivr.net/npm/promise-polyfill%408/dist/polyfill.min.js"></script>
+
+
+<div class="site-policy-line">
+    <div class="site-policy-line-inner">
+        Информация на данном ресурсе не является публичной офертой.
+        <a href="politika.html" target="_blank">
+            Политика конфиденциальности
+        </a>
+    </div>
+</div>
+
+<style>
+    .site-policy-line {
+        padding: 3px 10px;
+        background: #eee;
+        border-top: 1px solid #ccc;
+    }
+
+    .site-policy-line .site-policy-line-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 12px;
+        line-height: 18px;
+        color: #333;
+    }
+
+    .site-policy-line .site-policy-line-inner a {
+        color: #0036d0;
+        text-decoration: underline;
+    }
+</style>
+
+</body>
+</html>
