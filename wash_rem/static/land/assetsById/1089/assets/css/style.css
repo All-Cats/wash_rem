@@ -1400,9 +1400,9 @@ input::placeholder {
 
 .consultation__text {
   margin-left: 30px;
-  font-size: 19px;
+  font-size: 16px;
   color: #0d1525;
-  font-family: 'Montserrat Bold';
+  font-family: 'Montserrat';
 }
 
 .consultation__text span,
