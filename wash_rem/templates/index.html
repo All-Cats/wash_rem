@@ -100,9 +100,10 @@
                     <div class="header__right">
                         <div class="header__mobile-menu">
                             <ul class="menu header__menu">
-                                <li><a href="#breakage">Поломки</a></li>
+                                <li><a href="#breakage">Неисправности</a></li>
                                 <li><a href="#price">Прайс-лист</a></li>
                                 <li><a href="#features">Преимущества</a></li>
+                                <li><a href="#promo">Акции</a></li>
                             </ul>
                         </div>
                         <a href='tel:+79179651264' class='header__tel'>
@@ -198,7 +199,7 @@
                         </svg>
                     </div>
                     <div class="advantages__item-text">
-                        Заменяем только нерабочие детали
+                        Гарантия и качество — основа наших отношений с клиентом
                     </div>
                 </div>
             </div>
@@ -210,7 +211,7 @@
                         </svg>
                     </div>
                     <div class="advantages__item-text">
-                        Приступаем к работе в день обращения
+                        Выезд в день обращения
                     </div>
                 </div>
             </div>
@@ -456,7 +457,7 @@
                             <use xlink:href="{% static 'land/assetsById/1089/assets/gear/sprite.svg' %} #gear"></use>
                         </svg>
                     </div>
-                    <div class="features__item-text">Используем только оригинальные запчасти от производителя</div>
+                    <div class="features__item-text">Оригинальные запчасти в наличии и под заказ</div>
                 </div>
                 <div class="features__item">
                     <div class="features__item-icon">
@@ -489,7 +490,7 @@
                         </svg>
                     </div>
                     <div class="features__item-text">
-                        Диагностика поломки бесплатная
+                        Диагностика бесплатная
                     </div>
                 </div>
                 <div class="features__item">
@@ -633,11 +634,11 @@
                 </picture>
             </div>
             <div class="consultation__text">
-                    <p style="text-align: center;">✱ Указанные цены включают только стоимость ремонтных работ и не включают цену запчастей и комплектующих. За запчасти и комплектующие необходимо платить отдельно.</p>
+                    <p style="text-align: center;">✱ В указанную стоимость входит только работа мастера. Запчасти и комплектующие оплачиваются отдельно.</p>
                         <br>
-                    <p style="text-align: center;">✱ К сожалению, у нас нет бесплатных услуг.  Однако при согласии за ремонт оплата за выезд и диагностику не взимается. Если вы решите отказаться от ремонта, то нужно будет заплатить 500 рублей за выезд мастера.</p>
+                    <p style="text-align: center;">✱ При отказе от ремонта оплачивается только диагностика в размере 500 рублей.</p>
                         <br>
-                    <p style="text-align: center;">✱ Итоговая стоимость ремонта зависит от сложности работ, марки и модели стиральной машины, а также от стоимости запасных частей, комплектующих и материалов. Точную стоимость ремонта мастер сможет назвать только после полной диагностики вашей техники.</p>
+                    <p style="text-align: center;">✱ Итоговая стоимость зависит от скидки, от сложности работы, от страны изготовления и комплектующих. Её озвучит мастер после полной диагностики.</p>
                 <br>
 <!--                Звоните нам по телефону <a href="tel:+79179651264">+7 (917) 965-12-64</a> или-->
 <!--                <span data-toggle='modal' data-target='#popup-call'>оставьте заявку</span> на сайте-->
@@ -646,11 +647,12 @@
     </div>
 </div>
 
+<div id="promo"></div>
+
 <!-- Скидки -->
-<section id="discount" class="discount mobile-bg bg"
-         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
-    <div class="container">
-        <div class="discount-wrapper">
+<section id="discount" class="discount mobile-bg bg" style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
+    <div class="container" >
+        <div class="discount-wrapper" >
             <h2 class="discount__title title title_white">Скидка 10% <br> до <span class="day">24</span>&nbsp;<span
                     class="month"></span>
             </h2>
@@ -686,9 +688,8 @@
 <!-- Карта -->
 <section id="contact" class="contact section-padding-top">
     <div class="container">
-        <h2 class="contact__title title">Работаем по всему Тольятти и Самарской области <br> <span>* Выезд в область
-                    по
-                    договоренности</span></h2>
+        <h2 class="contact__title title">Работаем по всему г.Тольятти и Самарской области <br>
+            <span>* Выезд за пределы г.Тольятти по договоренности</span></h2>
     </div>
     <!--        <div class="map" id="yamap" style="background: #f2f2f2;">-->
     <!--            <script type="text/javascript" charset="utf-8" async-->
