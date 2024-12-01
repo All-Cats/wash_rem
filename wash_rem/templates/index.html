@@ -520,8 +520,8 @@
                 В пределах г. Тольятти
             </div>
             <div class="form offer__form">
-                {% csrf_token %}
                 <form action="/good/" method="post" class="sltop__form ">
+                    {% csrf_token %}
                     <div class='input-wrapper'>
                             <span>
                                 <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон' required>
@@ -628,14 +628,17 @@
                 </picture>
             </div>
             <div class="consultation__text">
-                    <p style="text-align: center;">✱ В указанную стоимость входит только работа мастера. Запчасти и комплектующие оплачиваются отдельно.</p>
-                        <br>
-                    <p style="text-align: center;">✱ При отказе от ремонта оплачивается только диагностика в размере 500 рублей.</p>
-                        <br>
-                    <p style="text-align: center;">✱ Итоговая стоимость зависит от скидки, от сложности работы, от страны изготовления и комплектующих. Её озвучит мастер после полной диагностики.</p>
+                <p style="text-align: center;">✱ В указанную стоимость входит только работа мастера. Запчасти и
+                    комплектующие оплачиваются отдельно.</p>
                 <br>
-<!--                Звоните нам по телефону <a href="tel:+79179651264">+7 (917) 965-12-64</a> или-->
-<!--                <span data-toggle='modal' data-target='#popup-call'>оставьте заявку</span> на сайте-->
+                <p style="text-align: center;">✱ При отказе от ремонта оплачивается только диагностика в размере 500
+                    рублей.</p>
+                <br>
+                <p style="text-align: center;">✱ Итоговая стоимость зависит от скидки, от сложности работы, от страны
+                    изготовления и комплектующих. Её озвучит мастер после полной диагностики.</p>
+                <br>
+                <!--                Звоните нам по телефону <a href="tel:+79179651264">+7 (917) 965-12-64</a> или-->
+                <!--                <span data-toggle='modal' data-target='#popup-call'>оставьте заявку</span> на сайте-->
             </div>
         </div>
     </div>
@@ -644,21 +647,22 @@
 <div id="promo"></div>
 
 <!-- Скидки -->
-<section id="discount" class="discount mobile-bg bg" style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
-    <div class="container" >
-        <div class="discount-wrapper" >
+<section id="discount" class="discount mobile-bg bg"
+         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
+    <div class="container">
+        <div class="discount-wrapper">
             <h2 class="discount__title title title_white">Скидка 10% <br> до <span class="day">24</span>&nbsp;<span
                     class="month"></span>
             </h2>
             <div class="discount__subtitle">До конца акции остается немного<br>
-<!--                <div class="hours" id="hours">-->
-<!--                    <span class="number"></span>-->
-<!--                    <span class="text">часов</span>-->
-<!--                </div>-->
-<!--                <div class="minutes" id="minutes">-->
-<!--                    <span class="number"></span>-->
-<!--                    <span class="text">минут</span>-->
-<!--                </div>-->
+                <!--                <div class="hours" id="hours">-->
+                <!--                    <span class="number"></span>-->
+                <!--                    <span class="text">часов</span>-->
+                <!--                </div>-->
+                <!--                <div class="minutes" id="minutes">-->
+                <!--                    <span class="number"></span>-->
+                <!--                    <span class="text">минут</span>-->
+                <!--                </div>-->
             </div>
             <div class="form discount__form">
                 <form action="/good/" method="post" class="sltop__form ">
