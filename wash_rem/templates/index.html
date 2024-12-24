@@ -168,14 +168,14 @@
                         <li>Время ремонта – от 30 минут</li>
                     </ul>
                     <div class="form header__form">
-                        <form action="/good/" method="post" class="sltop__form ">
+                        <form action="/good/" method="post" class="sltop__form " onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
                             {% csrf_token %}
                             <div class='input-wrapper'>
                                     <span>
                                         <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'
                                                required>
                                     </span>now
-                                <button type='submit' class='submit darken-hover' onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;" >Вызвать мастера</button>
+                                <button type='submit' class='submit darken-hover' >Вызвать мастера</button>
                             </div>
                         </form>
                         <small>
@@ -440,14 +440,14 @@
                         <div class="breakage__form-title">Оставьте заявку</div>
                         <div class="breakage__form-subtitle">И мы перезвоним в течение 2-х минут</div>
                         <div class="form">
-                            <form action="/good/" method="post" class="sltop__form ">
+                            <form action="/good/" method="post" class="sltop__form " onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
                                 {% csrf_token %}
                                 <div class='input-wrapper'>
                                         <span>
                                             <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'
                                                    required>
                                         </span>
-                                    <button type='submit' class='submit darken-hover' onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;"">Оставить заявку</button>
+                                    <button type='submit' class='submit darken-hover' >Оставить заявку</button>
                                 </div>
                             </form>
                             <small>
@@ -550,13 +550,13 @@
                 В пределах г. Тольятти
             </div>
             <div class="form offer__form">
-                <form action="/good/" method="post" class="sltop__form">
+                <form action="/good/" method="post" class="sltop__form" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
                     {% csrf_token %}
                     <div class='input-wrapper'>
                             <span>
                                 <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'  required>
                             </span>now
-                        <button type='submit' class='submit darken-hover' onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;"">Вызвать мастера</button>
+                        <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
                     </div>
                 </form>
                 <small>
@@ -695,7 +695,7 @@
                 <!--                </div>-->
             </div>
             <div class="form discount__form">
-                <form action="/good/" method="post" class="sltop__form">
+                <form action="/good/" method="post" class="sltop__form" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
                     <input type="hidden" name="direction_id" value="2">
                     <input type="hidden" name="offer_id" value="4">
                     <div class='input-wrapper'>
@@ -703,7 +703,7 @@
                         <span>
                                 <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон' required>
                             </span>now
-                        <button type='submit' class='submit darken-hover' onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">Вызвать мастера</button>
+                        <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
                     </div>
                 </form>
                 <small>
@@ -767,7 +767,7 @@
             <div class="popup__close close" data-dismiss="modal">&times;</div>
             <div class="popup__title">Оставьте заявку</div>
             <div class="popup__subtitle">Мы свяжемся с Вами в течение 1 минуты</div>
-            <form action="/good/" method="post" class="sltop__form popup__form form">
+            <form action="/good/" method="post" class="sltop__form popup__form form" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
                 {% csrf_token %}
                 <span style="display: none;">
                         <input type="hidden" class="modal-info">
@@ -776,7 +776,7 @@
                         <input name="phone" class="phone-input" maxlength="16" type="tel" placeholder="Ваш телефон"
                                required>
                     </span>
-                <button type="submit" class="submit darken-hover" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">Вызвать мастера</button>
+                <button type="submit" class="submit darken-hover">Вызвать мастера</button>
                 <small>
                     Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных данных
                 </small>
@@ -788,14 +788,13 @@
 </div>
 
 <!-- Окно благодарности -->
-<div class="modal popup popup-thank" id="popup-thank" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal popup popup-thank" id="popup-thank" tabindex="-1" role="dialog" aria-hidden="true" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
     <div class="modal-dialog popup__dialog" role="document">
         <div class="modal-content popup__content">
             <div class="popup__close close" data-dismiss="modal" onclick="closePopup()">&times;</div>
             <div class="popup__title">Заявка отправлена</div>
             <div class="popup__subtitle">Мы свяжемся с Вами в течение 1 минуты</div>
-
-            <button onclick="closePopup()" class="submit darken-hover popup-thank__close" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">Ок</button>
+            <button onclick="closePopup()" class="submit darken-hover popup-thank__close">Ок</button>
         </div>
     </div>
 </div>
