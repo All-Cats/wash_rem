@@ -24,4 +24,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index),
     path("good/", views.send_notif),
+    path("politika/", views.politika),
 ]

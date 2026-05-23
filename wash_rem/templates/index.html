@@ -174,7 +174,7 @@
                                     <span>
                                         <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'
                                                required>
-                                    </span>now
+                                    </span>
                                 <button type='submit' class='submit darken-hover' >Вызвать мастера</button>
                             </div>
                         </form>
@@ -195,7 +195,7 @@
                             <picture>
                                 <source srcset="{% static 'land/assetsById/1089/assets/images/washer/header-img.webp' %}"
                                         type="image/webp">
-                                <img src="{% static 'land/assetsById/1089/assets/images/washer/header-img.png' alt='img' %}">
+                                <img src="{% static 'land/assetsById/1089/assets/images/washer/header-img.png' %}" alt="img">
                             </picture>
                         </div>
                     </div>
@@ -269,7 +269,7 @@
                 <picture>
                     <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/bosch-w.webp' %}"
                             type="image/webp">
-                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/bosch.png' alt='img' %}"
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/bosch.png' %}" alt="img"
                          class="brands__img">
                 </picture>
             </div>
@@ -554,8 +554,8 @@
                     {% csrf_token %}
                     <div class='input-wrapper'>
                             <span>
-                                <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'  required>
-                            </span>now
+                                <input type='tel' class=”phone-input” name='phone' placeholder='Ваш телефон'  required>
+                            </span>
                         <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
                     </div>
                 </form>
@@ -702,7 +702,7 @@
                         {% csrf_token %}
                         <span>
                                 <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон' required>
-                            </span>now
+                            </span>
                         <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
                     </div>
                 </form>
@@ -872,14 +872,14 @@
 </script>
 
 
-<script src="cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js"></script>
-<script src="cdn.jsdelivr.net/npm/promise-polyfill%408/dist/polyfill.min.js"></script>
+<script src="{% static 'js/cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js' %}"></script>
+<script src="{% static 'js/cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js' %}"></script>
 
 
 <div class="site-policy-line">
     <div class="site-policy-line-inner">
         Информация на данном ресурсе не является публичной офертой.
-        <a href="politika.html" target="_blank">
+        <a href="/politika/" target="_blank">
             Политика конфиденциальности
         </a>
     </div>
