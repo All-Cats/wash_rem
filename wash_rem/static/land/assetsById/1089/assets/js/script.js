@@ -320,11 +320,18 @@ $('.day').html(nextDayFull);
     input.addEventListener('input', function (e) {
         let value = input.value.replace(/\D/g, '');
         if (!value.startsWith("7")) value = "7" + value;
-        value = value.slice(0, 12);
-        const formattedValue = "+7-" + value.slice(1, 4) +
-            (value.length > 4 ? "-" + value.slice(4, 7) : "") +
-            (value.length > 7 ? "-" + value.slice(7, 9) : "") +
-            (value.length > 9 ? "-" + value.slice(9, 11) : "");
-        input.value = formattedValue;
+        value = value.slice(0, 11);
+        let formatted = "+7";
+        if (value.length > 1) formatted += " (" + value.slice(1, 4);
+        if (value.length > 4) formatted += ") " + value.slice(4, 7);
+        if (value.length > 7) formatted += "-" + value.slice(7, 9);
+        if (value.length > 9) formatted += "-" + value.slice(9, 11);
+        input.value = formatted;
+    });
+    input.addEventListener('focus', function() {
+        if (!input.value) input.value = '+7';
+    });
+    input.addEventListener('blur', function() {
+        if (input.value === '+7') input.value = '';
     });
 });
