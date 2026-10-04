@@ -2659,14 +2659,10 @@ input::placeholder {
   pointer-events: none;
 }
 
-/* Ссылка на соседнее направление в подменю */
-.dropdown-submenu_other {
-  margin-top: 6px;
-  padding-top: 8px;
-  border-top: 1px solid rgba(13, 21, 37, 0.12);
-}
-.dropdown-submenu_other a {
-  font-family: 'Montserrat SemiBold', Arial, sans-serif;
+/* Текущее направление в подменю «Услуги и цены» */
+.dropdown-submenu a[aria-current="page"] {
+  color: rgba(13, 21, 37, 0.5);
+  pointer-events: none;
 }
 
 /* 3. Footer info — адаптивные стили */
