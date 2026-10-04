@@ -43,7 +43,147 @@
     <style>
         /* Активный цвет */
         body {
-            --active: #0fbdfa;
+            --active: #D7F900;
+        }
+
+        /* Dropdown меню — десктоп */
+        .dropdown-menu-item {
+            position: relative;
+        }
+        .dropdown-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 240px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            padding: 10px 0;
+            z-index: 100;
+            list-style: none;
+        }
+        .dropdown-menu-item:hover .dropdown-submenu {
+            display: block;
+        }
+        .dropdown-submenu li {
+            padding: 0;
+            margin: 0;
+        }
+        .dropdown-submenu li a {
+            display: block;
+            padding: 10px 20px;
+            color: #0d1525;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .dropdown-submenu li a:hover {
+            background: #D7F900;
+        }
+
+        /* Стрелка dropdown */
+        .dropdown-arrow {
+            margin-left: 4px;
+            transition: transform 0.3s;
+        }
+        .dropdown-menu-item.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown меню — мобилка */
+        @media (max-width: 991px) {
+            .dropdown-submenu {
+                position: static;
+                background: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                min-width: auto;
+                padding: 5px 0 5px 15px;
+            }
+            .dropdown-menu-item:hover .dropdown-submenu {
+                display: none;
+            }
+            .dropdown-menu-item.open .dropdown-submenu {
+                display: block;
+            }
+            .dropdown-submenu li a {
+                color: rgba(255,255,255,0.7);
+                font-size: 16px;
+                padding: 8px 10px;
+                transition: color 0.2s;
+            }
+            .dropdown-submenu li a:hover {
+                color: #D7F900;
+                background: transparent;
+            }
+
+            /* Разделители между пунктами */
+            .header__menu li {
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .header__menu li:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            /* Hover-эффект на пунктах */
+            .header__menu li a {
+                transition: color 0.2s;
+            }
+            .header__menu li a:hover {
+                color: #D7F900;
+            }
+
+            /* Доп. блок мобильного меню */
+            .mobile-menu-extra {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+                padding-top: 25px;
+                border-top: 1px solid rgba(255,255,255,0.15);
+                width: 100%;
+                max-width: 280px;
+            }
+            .mobile-menu-phone {
+                font-family: 'Montserrat ExtraBold', Arial, sans-serif;
+                font-size: 22px;
+                color: #fff;
+                margin-bottom: 8px;
+                transition: color 0.2s;
+            }
+            .mobile-menu-phone:hover {
+                color: #D7F900;
+            }
+            .mobile-menu-schedule {
+                font-size: 13px;
+                color: rgba(255,255,255,0.5);
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .mobile-menu-cta {
+                display: inline-block;
+                padding: 14px 35px;
+                background: #D7F900;
+                color: #2B2A51;
+                font-family: 'Montserrat SemiBold', Arial, sans-serif;
+                font-size: 16px;
+                border-radius: 8px;
+                transition: opacity 0.2s;
+                text-align: center;
+            }
+            .mobile-menu-cta:hover {
+                opacity: 0.85;
+            }
+        }
+
+        /* Скрыть доп. блок на десктопе */
+        @media (min-width: 992px) {
+            .mobile-menu-extra {
+                display: none;
+            }
         }
     </style>
 
@@ -116,7 +256,7 @@
                     Работаем без выходных <span>с 08:00 до 20:00</span>
                 </div>
                 <div class="header__top-right">
-                    в г. Тольятти
+                    <!--в г. Тольятти -->
                 </div>
             </div>
         </div>
@@ -125,16 +265,29 @@
         <div class="header__row-wrapper">
             <div class="container">
                 <div class="header__row">
-                    <a href='#home' class='header__logo'><img style="max-width: 150%;"
+                    <a href='#home' class='header__logo'><img class="header__logo-img"
                                                               src="{% static 'other_imgs/logo.png' %}" alt="img"></a>
                     <div class="header__right">
                         <div class="header__mobile-menu">
                             <ul class="menu header__menu">
-                                <li><a href="#breakage">Неисправности</a></li>
+                                <li class="dropdown-menu-item"><a href="#breakage">Услуги и цены <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                    <ul class="dropdown-submenu">
+                                        <li><a href="{% url 'index_rpk' %}">Электрика</a></li>
+                                        <li><a href="#price">Замена запчастей</a></li>
+                                        <li><a href="#price">Диагностика</a></li>
+                                        <li><a href="#price">Профилактика</a></li>
+                                    </ul>
+                                </li>
                                 <li><a href="#price">Прайс-лист</a></li>
-                                <li><a href="#features">Преимущества</a></li>
-                                <li><a href="#promo">Акции</a></li>
+                                <li><a href="#features">Контакты</a></li>
+                                <li><a href="#promo">Акции<svg width="20" height="20" viewBox="0 0 24 24" style="vertical-align:middle;margin-left:5px" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#D7F900"/><path d="M12 2.5L13.8 9.5 13.8 9.5 21.5 12 13.8 14.5 12 21.5 10.2 14.5 2.5 12 10.2 9.5Z" fill="#fff"/></svg></a></li>
                             </ul>
+                            <!-- Доп. блок для мобилки -->
+                            <div class="mobile-menu-extra">
+                                <a href="tel:+79179651264" class="mobile-menu-phone">+7 (917) 965-12-64</a>
+                                <div class="mobile-menu-schedule">Работаем без выходных с 08:00 до 20:00</div>
+                                <a href="#form" class="mobile-menu-cta">Вызвать мастера</a>
+                            </div>
                         </div>
                         <a href='tel:+79179651264' class='header__tel'>
                             <!-- <div class="header__tel-icon">
@@ -153,13 +306,13 @@
         </div>
     </div>
     <div class="header__main mobile-bg bg"
-         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/header-bg.jpg' %})">
+         style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({% static 'other_imgs/back.jpg' %})">
         <div class="container">
             <div class="header-wrapper">
                 <div class="header__col header__main-left">
                     <h1 class="header__title">
                         Ремонт <span class="br"></span><span>стиральных машин</span> <br>
-                        в г. Тольятти </h1>
+                        </h1>
                     <ul class="header__list">
                         <li>
                             Диагностика бесплатно
@@ -168,7 +321,7 @@
                         <li>Время ремонта – от 30 минут</li>
                     </ul>
                     <div class="form header__form">
-                        <form action="/good/" method="post" class="sltop__form " onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
+                        <form action="/good/" method="post" class="sltop__form ">
                             {% csrf_token %}
                             <div class='input-wrapper'>
                                     <span>
@@ -179,7 +332,7 @@
                             </div>
                         </form>
                         <small>
-                            Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных
+                            Нажимая кнопку “Вызвать мастера”, вы соглашаетесь на обработку персональных
                             данных
                         </small>
                     </div>
@@ -440,7 +593,7 @@
                         <div class="breakage__form-title">Оставьте заявку</div>
                         <div class="breakage__form-subtitle">И мы перезвоним в течение 2-х минут</div>
                         <div class="form">
-                            <form action="/good/" method="post" class="sltop__form " onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
+                            <form action="/good/" method="post" class="sltop__form ">
                                 {% csrf_token %}
                                 <div class='input-wrapper'>
                                         <span>
@@ -505,7 +658,7 @@
                             <use xlink:href=" {% static 'land/assetsById/1089/assets/gem/sprite.svg' %} #gem"></use>
                         </svg>
                     </div>
-                    <div class="features__item-text">Опытные мастера: у каждого специалиста более 5 лет опыта</div>
+                    <div class="features__item-text">Опытные мастера: у каждого специалиста более 9 лет опыта</div>
                 </div>
                 <div class="features__item">
                     <div class="features__item-icon">
@@ -539,7 +692,7 @@
     </picture>
     <div class="container">
         <div class="offer__col">
-            <h2 class="offer__title" style="font-size: 29px">
+            <h2 class="offer__title">
                 90% поломок ремонтируем на дому
                 в день обращения,
                 для всех остальных случаев -
@@ -547,10 +700,10 @@
                 и обратно
             </h2>
             <div class="offer__subtitle">
-                В пределах г. Тольятти
+               <!-- В пределах г. Тольятти -->
             </div>
             <div class="form offer__form">
-                <form action="/good/" method="post" class="sltop__form" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
+                <form action="/good/" method="post" class="sltop__form">
                     {% csrf_token %}
                     <div class='input-wrapper'>
                             <span>
@@ -570,7 +723,7 @@
 <!-- Цены на услуги -->
 <section id="price" class="price section-padding-top section-padding-bottom">
     <div class="container">
-        <h2 class="price__title title">Цены на услуги</h2>
+        <h2 class="price__title title">Цены по ремонту стиральных машин</h2>
         <div class="price-wrapper">
             <div class="price__item">
                 <div class="price__item-left">Диагностика</div>
@@ -681,7 +834,7 @@
          style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
     <div class="container">
         <div class="discount-wrapper">
-            <h2 class="discount__title title title_white">Скидка 10% <br> до <span class="day">24</span>&nbsp;<span
+            <h2 class="discount__title title title_white">Скидка 20% <br> до <span class="day">24</span>&nbsp;<span
                     class="month"></span>
             </h2>
             <div class="discount__subtitle">До конца акции остается немного<br>
@@ -695,19 +848,19 @@
                 <!--                </div>-->
             </div>
             <div class="form discount__form">
-                <form action="/good/" method="post" class="sltop__form" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
+                <form action="/good/" method="post" class="sltop__form">
+                    {% csrf_token %}
                     <input type="hidden" name="direction_id" value="2">
                     <input type="hidden" name="offer_id" value="4">
                     <div class='input-wrapper'>
-                        {% csrf_token %}
                         <span>
                                 <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон' required>
                             </span>
-                        <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
+                        <button type='submit' class='submit darken-hover'>Получить скидку</button>
                     </div>
                 </form>
                 <small>
-                    Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных данных
+                    Нажимая кнопку “Получить скидку”, вы соглашаетесь на обработку персональных данных
                 </small>
             </div>
         </div>
@@ -716,8 +869,8 @@
 <!-- Карта -->
 <section id="contact" class="contact section-padding-top">
     <div class="container">
-        <h2 class="contact__title title">Работаем по всему г.Тольятти и Самарской области <br>
-            <span>* Выезд за пределы г.Тольятти по договоренности</span></h2>
+        <h2 class="contact__title title">Работаем по Тольятти, Самаре и Уфе. <br>
+            <span>* Выезд за пределы города по договоренности</span></h2>
     </div>
     <!--        <div class="map" id="yamap" style="background: #f2f2f2;">-->
     <!--            <script type="text/javascript" charset="utf-8" async-->
@@ -733,7 +886,7 @@
     <div class="container">
         <div class="footer-wrapper">
             <div class="footer__logo">
-                <a href='#home' class='header__logo'><img style="max-width: 30%; "
+                <a href='#home' class='header__logo'><img style="max-width: 70%; "
                                                           src="{% static 'other_imgs/logo.png' %}" alt="img"></a>
             </div>
             <div class="footer__right">
@@ -753,10 +906,10 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <h3 style="text-align: center">Агрофенин Никита Александрович</h3>
-        <h3 style="text-align: center">ИНН: 638207118094</h3>
-        <h3 style="text-align: center">пос.Подстепки ул.Лазурный переулок д.5 кв 36</h3>
+    <div class="container footer__info">
+        <p>Агрофенин Никита Александрович</p>
+        <p>ИНН: 638207118094</p>
+        <p>пос.Подстепки ул.Лазурный переулок д.5 кв 36</p>
     </div>
 </footer>
 
@@ -766,8 +919,8 @@
         <div class="modal-content popup__content">
             <div class="popup__close close" data-dismiss="modal">&times;</div>
             <div class="popup__title">Оставьте заявку</div>
-            <div class="popup__subtitle">Мы свяжемся с Вами в течение 1 минуты</div>
-            <form action="/good/" method="post" class="sltop__form popup__form form" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
+            <div class="popup__subtitle">Мы свяжемся с Вами в течение 30 секунд</div>
+            <form action="/good/" method="post" class="sltop__form popup__form form">
                 {% csrf_token %}
                 <span style="display: none;">
                         <input type="hidden" class="modal-info">
@@ -778,7 +931,7 @@
                     </span>
                 <button type="submit" class="submit darken-hover">Вызвать мастера</button>
                 <small>
-                    Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных данных
+                    Нажимая кнопку “Вызвать мастера”, вы соглашаетесь на обработку персональных данных
                 </small>
 
                 <input type="hidden" name="work" value="на сайте есть акция - Скидка 20%">
@@ -787,8 +940,30 @@
     </div>
 </div>
 
+<!-- Popup прайс-лист -->
+<div class="modal popup popup-price" id="popup-price" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup__dialog" role="document">
+        <div class="modal-content popup__content">
+            <div class="popup__close close" onclick="closePricePopup()">&times;</div>
+            <div class="popup__title">Узнать точную стоимость</div>
+            <div class="popup__subtitle" id="popup-price-service"></div>
+            <form action="/good/" method="post" class="sltop__form popup__form form">
+                {% csrf_token %}
+                <input type="hidden" name="work" id="popup-price-work" value="">
+                <span>
+                    <input name="phone" class="phone-input" maxlength="16" type="tel" placeholder="Ваш телефон" required>
+                </span>
+                <button type="submit" class="submit darken-hover">Узнать стоимость</button>
+                <small>
+                    Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+                </small>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!-- Окно благодарности -->
-<div class="modal popup popup-thank" id="popup-thank" tabindex="-1" role="dialog" aria-hidden="true" onsubmit="ym(99158784, 'reachGoal', 'zayavka'); return true;">
+<div class="modal popup popup-thank" id="popup-thank" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog popup__dialog" role="document">
         <div class="modal-content popup__content">
             <div class="popup__close close" data-dismiss="modal" onclick="closePopup()">&times;</div>
@@ -833,8 +1008,17 @@
             form.addEventListener('submit', async function (event) {
                 event.preventDefault();
 
+                // Фикс 6: блокировка повторной отправки
+                const btn = form.querySelector('button[type="submit"]');
+                if (btn.disabled) return;
+                const originalText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = 'Отправка...';
+
+                // Фикс 2: CSRF из текущей формы
                 const formData = new FormData(form);
-                const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+                const csrfInput = form.querySelector('[name=csrfmiddlewaretoken]');
+                const csrfToken = csrfInput ? csrfInput.value : '';
 
                 try {
                     const response = await fetch(form.action, {
@@ -847,13 +1031,23 @@
                     });
                     const data = await response.json();
                     if (response.ok && data.success) {
+                        // Фикс 7: метрика через JS вместо мёртвого onsubmit
+                        if (typeof ym === 'function') {
+                            ym(99158784, 'reachGoal', 'zayavka');
+                        }
                         showPopup();
                         form.reset();
                     } else {
-                        console.error('Ошибка:', data.message);
+                        // Фикс 5: показ ошибки пользователю
+                        showError(form, data.message || 'Произошла ошибка. Попробуйте ещё раз.');
                     }
                 } catch (error) {
-                    console.error('Ошибка при отправке:', error);
+                    // Фикс 5: показ ошибки при сетевом сбое
+                    showError(form, 'Ошибка соединения. Попробуйте позже или позвоните нам.');
+                } finally {
+                    // Фикс 6: разблокировка кнопки
+                    btn.disabled = false;
+                    btn.textContent = originalText;
                 }
             });
         });
@@ -861,6 +1055,18 @@
         function showPopup() {
             const popup = document.getElementById('popup-thank');
             popup.style.display = 'block';
+        }
+
+        function showError(form, message) {
+            // Удалить предыдущую ошибку если есть
+            const prev = form.parentElement.querySelector('.form-error');
+            if (prev) prev.remove();
+            const el = document.createElement('div');
+            el.className = 'form-error';
+            el.textContent = message;
+            el.style.cssText = 'color:#ff4444;font-size:13px;text-align:center;margin-top:8px;';
+            form.parentElement.appendChild(el);
+            setTimeout(function() { el.remove(); }, 5000);
         }
     });
 
@@ -872,8 +1078,8 @@
 </script>
 
 
-<script src="{% static 'js/cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/3.3.4/jquery.inputmask.bundle.min.js' %}"></script>
-<script src="{% static 'js/cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js' %}"></script>
+<!-- jquery.inputmask удалён — маска телефона реализована в script.js -->
+<!-- promise-polyfill удалён — не нужен для современных браузеров -->
 
 
 <div class="site-policy-line">
@@ -907,6 +1113,78 @@
     }
 </style>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var item = document.querySelector('.dropdown-menu-item');
+    if (!item) return;
+
+    // Dropdown toggle на мобилке
+    item.querySelector('a').addEventListener('click', function(e) {
+        if (window.innerWidth <= 991) {
+            e.preventDefault();
+            item.classList.toggle('open');
+        }
+    });
+
+    // Закрытие мобильного меню при клике на CTA или ссылки подменю
+    var mobileMenu = document.querySelector('.header__mobile-menu');
+    var menuLink = document.querySelector('.menu-link');
+    var closeMobile = function() {
+        if (window.innerWidth <= 991 && mobileMenu && menuLink) {
+            mobileMenu.classList.remove('header__mobile-menu_active');
+            menuLink.classList.remove('menu-link_active');
+            item.classList.remove('open');
+        }
+    };
+    var cta = document.querySelector('.mobile-menu-cta');
+    if (cta) cta.addEventListener('click', closeMobile);
+    document.querySelectorAll('.dropdown-submenu a').forEach(function(a) {
+        a.addEventListener('click', closeMobile);
+    });
+});
+
+// Popup прайс-лист — клик по цене
+document.querySelectorAll('.price__item').forEach(function(item) {
+    var right = item.querySelector('.price__item-right');
+    if (!right) return;
+    right.addEventListener('click', function() {
+        var left = item.querySelector('.price__item-left');
+        var service = left ? left.textContent.trim() : '';
+        var price = right.textContent.trim();
+        document.getElementById('popup-price-service').textContent = service + ' — ' + price;
+        document.getElementById('popup-price-work').value = 'Прайс: ' + service + ' (' + price + ')';
+        document.getElementById('popup-price').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Закрытие popup прайса
+document.getElementById('popup-price').addEventListener('click', function(e) {
+    if (e.target === this) closePricePopup();
+});
+</script>
+
+<script>
+function closePricePopup() {
+    document.getElementById('popup-price').style.display = 'none';
+    document.body.style.overflow = '';
+}
+</script>
+
+<style>
+.popup-price {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+}
+.popup-price[style*="display: block"] {
+    display: flex !important;
+}
+</style>
 <!--f-->
 </body>
 </html>

@@ -330,7 +330,7 @@ input::placeholder {
   background-color: var(--active);
   font-size: 16px;
   font-family: 'Montserrat SemiBold';
-  color: #fff;
+  color: #2B2A51;
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
@@ -630,11 +630,14 @@ input::placeholder {
 }
 
 .header__main {
+  position: relative;
   max-width: 2500px;
   margin: 0 auto;
   padding: 126px 0 170px 0;
   min-height: 712px;
   color: #fff;
+  border-bottom-left-radius: 50% 110px;
+  border-bottom-right-radius: 50% 110px;
 }
 
 .header__main-left {
@@ -807,7 +810,7 @@ input::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #e4eff4;
+  background-color: #ECFF74;
   border-radius: 50%;
 }
 
@@ -922,6 +925,11 @@ input::placeholder {
   font-size: 20px;
   font-family: 'Montserrat Bold';
   color: #0d1525;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.price__item-right:hover {
+  color: var(--active);
 }
 
 .advantages {
@@ -970,7 +978,7 @@ input::placeholder {
       -ms-flex-align: center;
           align-items: center;
   margin-bottom: 35px;
-  background-color: #e4eff4;
+  background-color: #ECFF74;
   border-radius: 50%;
 }
 
@@ -1031,6 +1039,7 @@ input::placeholder {
   border-right: 1px solid #cbd8e7;
   color: #0d1525;
   overflow: hidden;
+  background-color: #f8f8f8;
 }
 
 .breakage__item-img {
@@ -1170,7 +1179,7 @@ input::placeholder {
   width: 15px;
   height: 4px;
   border-radius: 5px;
-  background: #ff7272;
+  background: #D7F900;
 }
 
 .breakage__item-price {
@@ -1186,14 +1195,14 @@ input::placeholder {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background: #f79e1cdb;
+  background: #D7F900;
   cursor: pointer;
-  font-family: 'Montserrat ExtraBold';
+  font-family: 'Montserrat ExtraBold', Arial, sans-serif;
   font-size: 20px;
 }
 
 .breakage__item_1 .breakage__item-price {
-  background: #fff;
+  background: #D7F900;
   color: #0d1525;
 }
 
@@ -1351,9 +1360,9 @@ input::placeholder {
   margin-bottom: 20px;
   text-align: left;
   color: #fff;
-  font-size: 40px;
+  font-size: 29px;
   font-family: 'Montserrat ExtraBold';
-  line-height: calc(48.5 / 40);
+  line-height: 1.3;
 }
 
 .offer__title span {
@@ -1811,6 +1820,8 @@ input::placeholder {
   .header__main {
     min-height: auto;
     padding-top: 90px;
+    border-bottom-left-radius: 50% 60px;
+    border-bottom-right-radius: 50% 60px;
   }
 
   .header__main-left {
@@ -2146,11 +2157,11 @@ input::placeholder {
   }
 
   .price__item-left {
-    width: 235px;
+    width: 65%;
   }
 
   .price__item-right {
-    width: 110px;
+    width: 30%;
   }
 
   .advantages {
@@ -2346,6 +2357,7 @@ input::placeholder {
 
   .header__main {
     padding: 60px 0;
+    border-radius: 0;
   }
 
   .header__tel span {
@@ -2606,6 +2618,88 @@ input::placeholder {
 
   li {
     list-style-image: url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7);
+  }
+}
+
+/* === ADAPTIVE FIXES === */
+
+/* 1. Логотип хедера — адаптивный */
+.header__logo-img {
+  max-width: 180px;
+  height: auto;
+}
+
+/* 3. Footer info — адаптивные стили */
+.footer__info {
+  text-align: center;
+  padding: 15px 0;
+}
+.footer__info p {
+  margin: 0 0 5px;
+  font-size: 16px;
+  font-family: 'Montserrat SemiBold', Arial, sans-serif;
+  color: #0d1525;
+  line-height: 1.5;
+}
+
+/* 4. Google Maps iframe — адаптивная высота */
+@media (max-width: 991px) {
+  .contact iframe {
+    height: 400px;
+  }
+
+  /* 6. Карточки неисправностей — убрать правый бордер у чётных */
+  .breakage__item-wrapper:nth-child(even) .breakage__item {
+    border-right: none;
+  }
+}
+
+@media (max-width: 767px) {
+  /* 1. Логотип хедера — уменьшить на мобилке */
+  .header__logo-img {
+    max-width: 130px;
+  }
+
+  /* 3. Footer info — мельче */
+  .footer__info p {
+    font-size: 14px;
+  }
+
+  /* 4. Карта — ещё меньше */
+  .contact iframe {
+    height: 300px;
+  }
+
+  /* 7. Footer лого — ограничить */
+  .footer__logo img {
+    max-width: 150px !important;
+  }
+
+  /* 8. Consultation текст — адаптивный размер */
+  .consultation__text p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 400px) {
+  /* Маленькие экраны */
+  .header__logo-img {
+    max-width: 110px;
+  }
+
+  .offer__title {
+    font-size: 18px;
+  }
+
+  .footer__info p {
+    font-size: 13px;
+  }
+
+  .breakage__item-price {
+    font-size: 16px;
+    min-width: 120px;
+    padding: 12px 15px;
   }
 }
 @supports (-webkit-appearance:none){
