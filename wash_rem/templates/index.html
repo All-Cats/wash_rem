@@ -117,6 +117,9 @@
                 color: #D7F900;
                 background: transparent;
             }
+            .dropdown-submenu_other {
+                border-top-color: rgba(255, 255, 255, 0.15);
+            }
 
             /* Разделители между пунктами */
             .header__menu li {
@@ -265,17 +268,17 @@
         <div class="header__row-wrapper">
             <div class="container">
                 <div class="header__row">
-                    <a href='#home' class='header__logo'><img class="header__logo-img"
-                                                              src="{% static 'other_imgs/logo.png' %}" alt="img"></a>
+                    <a href="{% url 'index' %}" class='header__logo'><img class="header__logo-img"
+                                                              src="{% static 'other_imgs/logo.png' %}" alt="Модуль Сервис — ремонт стиральных машин"></a>
                     <div class="header__right">
                         <div class="header__mobile-menu">
                             <ul class="menu header__menu">
                                 <li class="dropdown-menu-item"><a href="#breakage">Услуги и цены <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
                                     <ul class="dropdown-submenu">
-                                        <li><a href="{% url 'index_rpk' %}">Электрика</a></li>
                                         <li><a href="#price">Замена запчастей</a></li>
                                         <li><a href="#price">Диагностика</a></li>
                                         <li><a href="#price">Профилактика</a></li>
+                                        <li class="dropdown-submenu_other"><a href="{% url 'index_rpk' %}">Услуги электрика</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="#price">Прайс-лист</a></li>
@@ -886,8 +889,8 @@
     <div class="container">
         <div class="footer-wrapper">
             <div class="footer__logo">
-                <a href='#home' class='header__logo'><img style="max-width: 70%; "
-                                                          src="{% static 'other_imgs/logo.png' %}" alt="img"></a>
+                <a href="{% url 'index' %}" class='header__logo'><img style="max-width: 70%; "
+                                                          src="{% static 'other_imgs/logo.png' %}" alt="Модуль Сервис — ремонт стиральных машин"></a>
             </div>
             <div class="footer__right">
                 <a href='tel:+79179651264' class='header__tel'>
@@ -905,6 +908,11 @@
                 </a>
             </div>
         </div>
+    </div>
+    <div class="container footer__nav">
+        <a href="{% url 'index' %}" aria-current="page">Ремонт стиральных машин</a>
+        <a href="{% url 'index_rpk' %}">Услуги электрика</a>
+        <a href="{% url 'politika' %}">Политика конфиденциальности</a>
     </div>
     <div class="container footer__info">
         <p>Агрофенин Никита Александрович</p>
@@ -1085,7 +1093,7 @@
 <div class="site-policy-line">
     <div class="site-policy-line-inner">
         Информация на данном ресурсе не является публичной офертой.
-        <a href="/politika/" target="_blank">
+        <a href="{% url 'politika' %}" target="_blank">
             Политика конфиденциальности
         </a>
     </div>

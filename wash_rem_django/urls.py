@@ -22,8 +22,8 @@ from wash_rem import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", views.index),
+    path("", views.index, name='index'),
     path("remont-pk/", views.index_rpk, name='index_rpk'),
-    path("good/", views.send_notif),
-    path("politika/", views.politika),
+    path("good/", views.send_notif, name='send_notif'),
+    path("politika/", views.politika, name='politika'),
 ]

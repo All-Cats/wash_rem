@@ -2629,6 +2629,46 @@ input::placeholder {
   height: auto;
 }
 
+/* Перелинковка направлений в подвале */
+.footer__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 10px 30px;
+  padding: 20px 0 0;
+}
+.footer__nav a {
+  font-size: 16px;
+  font-family: 'Montserrat SemiBold', Arial, sans-serif;
+  color: #0d1525;
+  border-bottom: 1px solid rgba(13, 21, 37, 0.25);
+  transition: color 0.2s, border-color 0.2s;
+}
+.footer__nav a:hover {
+  color: var(--active);
+  border-color: var(--active);
+}
+.footer__nav a[aria-current="page"] {
+  color: rgba(13, 21, 37, 0.5);
+  border-bottom-color: transparent;
+  pointer-events: none;
+}
+
+/* Ссылка на соседнее направление в подменю */
+.dropdown-submenu_other {
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(13, 21, 37, 0.12);
+}
+.dropdown-submenu_other a {
+  font-family: 'Montserrat SemiBold', Arial, sans-serif;
+}
+
 /* 3. Footer info — адаптивные стили */
 .footer__info {
   text-align: center;
