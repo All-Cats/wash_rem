@@ -18,16 +18,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from django.views.generic import RedirectView
-
 from wash_rem import views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index, name='index'),
     path("electrica/", views.electrica, name='electrica'),
-    # старый адрес страницы электрики
-    path("remont-pk/", RedirectView.as_view(pattern_name='electrica', permanent=True)),
     path("good/", views.send_notif, name='send_notif'),
     path("politika/", views.politika, name='politika'),
 ]
