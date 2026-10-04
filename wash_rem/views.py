@@ -17,8 +17,8 @@ def index(request):
     return render(request, "index.html")
 
 
-def index_rpk(request):
-    return render(request, "index_rpk.html")
+def electrica(request):
+    return render(request, "electrica.html")
 
 
 def politika(request):
