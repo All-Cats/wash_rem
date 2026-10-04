@@ -17,6 +17,10 @@ def index(request):
     return render(request, "index.html")
 
 
+def index_rpk(request):
+    return render(request, "index_rpk.html")
+
+
 def politika(request):
     return render(request, "politika.html")
 
@@ -25,8 +29,11 @@ async def send_notif(request):
     if request.method == "POST":
         mobile = request.POST.get("phone")
         if mobile:
-            bot = _get_bot()
-            await bot.send_message(chat_id=-1002341017964, text=mobile)
+            try:
+                bot = _get_bot()
+                await bot.send_message(chat_id=-1002341017964, text=mobile)
+            except Exception:
+                return JsonResponse({'success': False, 'message': 'Ошибка отправки. Попробуйте позже или позвоните нам.'}, status=500)
             return JsonResponse({'success': True, 'message': 'Заявка отправлена'})
         return JsonResponse({'success': False, 'message': 'Пожалуйста, введите номер телефона'}, status=400)
     return JsonResponse({'success': False, 'message': 'Неверный метод запроса'}, status=405)

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="ru">
+
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="{% static 'land/assetsById/1089/assets/images/favicon/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32"
+          href="{% static 'land/assetsById/1089/assets/images/favicon/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16"
+          href="{% static 'land/assetsById/1089/assets/images/favicon/favicon-16x16.png' %}">
+
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="description"
+          content="Профессиональные услуги электрика в Тольятти от сервиса ЭлектроМастер. Монтаж и ремонт электропроводки, установка розеток и выключателей, электрощиты, поиск короткого замыкания. Гарантия на все услуги от 6 месяцев.">
+
+    <meta name="keywords" content="вызов электрика, ремонт электропроводки, замена проводки, установка розеток, установка выключателей,
+     монтаж электрощита, замена автоматов, установка узо, поиск короткого замыкания, монтаж люстры, подключение бытовой техники,
+     электромонтажные работы, устранение перебоев напряжения, замена счетчика, устройство заземления, штробление стен под проводку,
+     аварийный вызов электрика, электрика под ключ">
+
+    <!-- Шрифты -->
+    <link rel="preload" href="{% static 'land/assetsById/1089/assets/css/fonts.css' %}" as="font"
+          onload="this.rel='stylesheet'">
+
+    <!-- Библиотеки -->
+    <link rel="stylesheet" href="{% static 'land/assetsById/1089/assets/css/vendors.css' %}">
+
+    <!-- Общие стили -->
+    <link rel="stylesheet" href="{% static 'land/assetsById/1089/assets/css/style.css' %}">
+
+    <title>Услуги электрика в г. Тольятти | ЭлектроМастер</title>
+
+    <style>
+        /* Активный цвет */
+        body {
+            --active: #D7F900;
+        }
+
+        /* Dropdown меню — десктоп */
+        .dropdown-menu-item {
+            position: relative;
+        }
+        .dropdown-submenu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 240px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            padding: 10px 0;
+            z-index: 100;
+            list-style: none;
+        }
+        .dropdown-menu-item:hover .dropdown-submenu {
+            display: block;
+        }
+        .dropdown-submenu li {
+            padding: 0;
+            margin: 0;
+        }
+        .dropdown-submenu li a {
+            display: block;
+            padding: 10px 20px;
+            color: #0d1525;
+            font-size: 14px;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+        .dropdown-submenu li a:hover {
+            background: #D7F900;
+        }
+
+        /* Стрелка dropdown */
+        .dropdown-arrow {
+            margin-left: 4px;
+            transition: transform 0.3s;
+        }
+        .dropdown-menu-item.open .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        /* Dropdown меню — мобилка */
+        @media (max-width: 991px) {
+            .dropdown-submenu {
+                position: static;
+                background: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                min-width: auto;
+                padding: 5px 0 5px 15px;
+            }
+            .dropdown-menu-item:hover .dropdown-submenu {
+                display: none;
+            }
+            .dropdown-menu-item.open .dropdown-submenu {
+                display: block;
+            }
+            .dropdown-submenu li a {
+                color: rgba(255,255,255,0.7);
+                font-size: 16px;
+                padding: 8px 10px;
+                transition: color 0.2s;
+            }
+            .dropdown-submenu li a:hover {
+                color: #D7F900;
+                background: transparent;
+            }
+
+            /* Разделители между пунктами */
+            .header__menu li {
+                padding-bottom: 20px;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .header__menu li:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            /* Hover-эффект на пунктах */
+            .header__menu li a {
+                transition: color 0.2s;
+            }
+            .header__menu li a:hover {
+                color: #D7F900;
+            }
+
+            /* Доп. блок мобильного меню */
+            .mobile-menu-extra {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 30px;
+                padding-top: 25px;
+                border-top: 1px solid rgba(255,255,255,0.15);
+                width: 100%;
+                max-width: 280px;
+            }
+            .mobile-menu-phone {
+                font-family: 'Montserrat ExtraBold', Arial, sans-serif;
+                font-size: 22px;
+                color: #fff;
+                margin-bottom: 8px;
+                transition: color 0.2s;
+            }
+            .mobile-menu-phone:hover {
+                color: #D7F900;
+            }
+            .mobile-menu-schedule {
+                font-size: 13px;
+                color: rgba(255,255,255,0.5);
+                margin-bottom: 20px;
+                text-align: center;
+            }
+            .mobile-menu-cta {
+                display: inline-block;
+                padding: 14px 35px;
+                background: #D7F900;
+                color: #2B2A51;
+                font-family: 'Montserrat SemiBold', Arial, sans-serif;
+                font-size: 16px;
+                border-radius: 8px;
+                transition: opacity 0.2s;
+                text-align: center;
+            }
+            .mobile-menu-cta:hover {
+                opacity: 0.85;
+            }
+        }
+
+        /* Скрыть доп. блок на десктопе */
+        @media (min-width: 992px) {
+            .mobile-menu-extra {
+                display: none;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();
+   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(99158784, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div>
+<img src="https://mc.yandex.ru/watch/99158784" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+
+<!-- Доп. скрипт для метрики-->
+
+<!--<script>-->
+<!--        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};-->
+<!--        ga.l=+new Date;-->
+<!--        ga('create', '99158784', 'auto');-->
+<!--        // Plugins-->
+<!--        ga('send', 'pageview');-->
+<!--</script>-->
+
+<!-- Параллакс изображения -->
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-1.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-1.png' %}" class="rellax rellax-img rellax-img-1"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-2.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-2.png' %}" class="rellax rellax-img rellax-img-2"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-3.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-3.png' %}" class="rellax rellax-img rellax-img-3"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<picture>
+    <source srcset="{% static 'land/assetsById/1089/assets/images/rellax-4.webp' %}" type="image/webp">
+    <img src="{% static 'land/assetsById/1089/assets/images/rellax-4.png' %}" class="rellax rellax-img rellax-img-4"
+         data-rellax-speed="7" alt="img">
+</picture>
+
+<!-- Главный экран -->
+<header class="header">
+    <div class="header__top-wrapper">
+        <div class="container">
+            <div class="header__top" data-da=".header__mobile-menu,991,last">
+                <div class="header__top-left">
+                    Работаем без выходных <span>с 08:00 до 20:00</span>
+                </div>
+                <div class="header__top-right">
+                    <!--в г. Тольятти -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header_fixed">
+        <div class="header__row-wrapper">
+            <div class="container">
+                <div class="header__row">
+                    <a href='#home' class='header__logo'><img class="header__logo-img"
+                                                              src="{% static 'other_imgs/logo.png' %}" alt="ЭлектроМастер — услуги электрика"></a>
+                    <div class="header__right">
+                        <div class="header__mobile-menu">
+                            <ul class="menu header__menu">
+                                <li class="dropdown-menu-item"><a href="#breakage">Услуги и цены <svg class="dropdown-arrow" width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+                                    <ul class="dropdown-submenu">
+                                        <li><a href="#breakage">Ремонт и монтаж проводки</a></li>
+                                        <li><a href="#price">Замена автоматов и УЗО</a></li>
+                                        <li><a href="#price">Поиск неисправностей</a></li>
+                                        <li><a href="#price">Электромонтаж под ключ</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#price">Прайс-лист</a></li>
+                                <li><a href="#features">Контакты</a></li>
+                                <li><a href="#promo">Акции<svg width="20" height="20" viewBox="0 0 24 24" style="vertical-align:middle;margin-left:5px" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="11" fill="#D7F900"/><path d="M12 2.5L13.8 9.5 13.8 9.5 21.5 12 13.8 14.5 12 21.5 10.2 14.5 2.5 12 10.2 9.5Z" fill="#fff"/></svg></a></li>
+                            </ul>
+                            <!-- Доп. блок для мобилки -->
+                            <div class="mobile-menu-extra">
+                                <a href="tel:+79179651264" class="mobile-menu-phone">+7 (917) 965-12-64</a>
+                                <div class="mobile-menu-schedule">Работаем без выходных с 08:00 до 20:00</div>
+                                <a href="#form" class="mobile-menu-cta">Вызвать мастера</a>
+                            </div>
+                        </div>
+                        <a href='tel:+79179651264' class='header__tel'>
+                            <!-- <div class="header__tel-icon">
+                                <svg class='phone'>
+                                    <use xlink:href='land/assetsById/1089/assets/phone/sprite.png#phone'></use>
+                                </svg>
+                            </div> -->
+                            <span>+7 (917) 965-12-64</span>
+                        </a>
+                        <a href='#' class='menu-link'>
+                            <span class='menu-lines'></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="header__main mobile-bg bg"
+         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/test-2.jpg' %})">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="header__col header__main-left">
+                    <h1 class="header__title">
+                        Ремонт <span class="br"></span><span>и монтаж электрики</span> <br>
+                        </h1>
+                    <ul class="header__list">
+                        <li>
+                            Диагностика бесплатно
+                        </li>
+                        <li>Свой склад электрооборудования</li>
+                        <li>Аварийный выезд – в день обращения</li>
+                    </ul>
+                    <div class="form header__form">
+                        <form action="/good/" method="post" class="sltop__form ">
+                            {% csrf_token %}
+                            <div class='input-wrapper'>
+                                    <span>
+                                        <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'
+                                               required>
+                                    </span>
+                                <button type='submit' class='submit darken-hover' >Вызвать мастера</button>
+                            </div>
+                        </form>
+                        <small>
+                            Нажимая кнопку “Вызвать мастера”, вы соглашаетесь на обработку персональных
+                            данных
+                        </small>
+                    </div>
+                </div>
+                <div class="header__col">
+                    <div class="header__circle">
+                        <div class="header__icon">
+                            <svg class='settings'>
+                                <use xlink:href="{% static 'land/assetsById/1089/assets/settings/sprite.svg' %}#settings"></use>
+                            </svg>
+                        </div>
+                        <div class="header__img">
+                            <picture>
+                                <source srcset="{% static 'land/assetsById/1089/assets/images/washer/header-img.webp' %}"
+                                        type="image/webp">
+                                <img src="{% static 'land/assetsById/1089/assets/images/washer/header-img.png' %}" alt="Электрик выполняет монтаж проводки">
+                            </picture>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Преимущества -->
+<div class="advantages">
+    <div class="container">
+        <div class="advantages-wrapper row">
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='gear'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/gear/sprite.svg' %} #gear"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Используем только сертифицированное оборудование
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='chip'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/chip/sprite.svg' %} #chip"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Гарантия и качество — основа наших отношений с клиентом
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='calendar'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/calendar/sprite.svg' %} #calendar"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Выезд в день обращения
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 advantages__item-wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__item-icon">
+                        <svg class='gem'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/gem/sprite.svg' %} #gem"></use>
+                        </svg>
+                    </div>
+                    <div class="advantages__item-text">
+                        Мастера с опытом от 5&nbsp;лет
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Бренды -->
+<div class="brands section-padding section-padding-top">
+    <div class="swiper-container" id="js-carousel">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/bosch-w.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/bosch.png' %}" alt="ABB"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/electrolux-w.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/electrolux.png' %}" alt="Schneider Electric"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/haier-w.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/haier.png' %}" alt="Legrand"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/indesit-w.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/indesit.png' %}" alt="IEK"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/lg-w.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/lg.png' %}" alt="EKF"
+                         class="brands__img">
+                </picture>
+            </div>
+            <div class="swiper-slide" style="text-align: center">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/brands/samsung-w.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/brands/samsung.png' %}" alt="Simon"
+                         class="brands__img">
+                </picture>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Выберите неисправность -->
+<section id="breakage" class="breakage section-padding">
+    <div class="container">
+        <h2 class="breakage__title title">Выберите <span>неисправность</span></h2>
+        <div class="row breakage-wrapper">
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_1">
+                    <picture>
+                        <source srcset="{% static 'land/assetsById/1089/assets/images/washer/breakage/1.webp' %}"
+                                type="image/webp">
+                        <img src="{% static 'land/assetsById/1089/assets/images/washer/breakage/1.png' %}"
+                             class="breakage__item-img" alt="Диагностика и ремонт электропроводки" style="bottom: 0">
+                    </picture>
+                    <div class="breakage__item-title">Нет света в квартире</div>
+                    <ul class="breakage__item-list">
+                        <li>Диагностика проводки</li>
+                        <li>Проверка автоматов</li>
+                        <li>Устранение короткого замыкания</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 500 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_2">
+                    <div class="breakage__item-title">Искрят розетки</div>
+                    <ul class="breakage__item-list">
+                        <li>Замена розетки</li>
+                        <li>Протяжка контактов</li>
+                        <li>Проверка проводки</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 450 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_3">
+                    <div class="breakage__item-title">Выбивает автомат</div>
+                    <ul class="breakage__item-list">
+                        <li>Поиск короткого замыкания</li>
+                        <li>Замена автомата</li>
+                        <li>Проверка нагрузки</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 550 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_4">
+                    <div class="breakage__item-title">Мигает свет</div>
+                    <ul class="breakage__item-list">
+                        <li>Протяжка контактов</li>
+                        <li>Замена выключателя</li>
+                        <li>Проверка напряжения</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 500 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6 col-lg-3">
+                <div class="breakage__item breakage__item_5">
+                    <div class="breakage__item-title">Не работает розетка</div>
+                    <ul class="breakage__item-list">
+                        <li>Диагностика розетки</li>
+                        <li>Замена розетки</li>
+                        <li>Проверка проводки</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 450 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_6">
+                    <picture>
+                        <source srcset="{% static 'land/assetsById/1089/assets/images/washer/breakage/2.webp' %}"
+                                type="image/webp">
+                        <img src="{% static 'land/assetsById/1089/assets/images/washer/breakage/2.png' %}"
+                             class="breakage__item-img" alt="Ремонт электрощита">
+                    </picture>
+                    <div class="breakage__item-title">Запах гари от проводки</div>
+                    <ul class="breakage__item-list">
+                        <li>Диагностика проводки</li>
+                        <li>Замена проводки</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 700 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_7">
+                    <div class="breakage__item-title">Бьёт током</div>
+                    <ul class="breakage__item-list">
+                        <li>Проверка заземления</li>
+                        <li>Диагностика утечки тока</li>
+                        <li>Устранение неисправности</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 600 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item ">
+                    <div class="breakage__item-title">Не работает освещение</div>
+                    <ul class="breakage__item-list">
+                        <li>Диагностика люстры</li>
+                        <li>Замена лампы или патрона</li>
+                        <li>Проверка проводки</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 400 ₽</div>
+                </div>
+            </div>
+            <div class="breakage__item-wrapper col-md-6">
+                <div class="breakage__item breakage__item_9">
+                    <div class="breakage__item-title">Слабое напряжение в сети</div>
+                    <ul class="breakage__item-list">
+                        <li>Диагностика ввода</li>
+                        <li>Проверка счетчика</li>
+                        <li>Проверка нагрузки</li>
+                    </ul>
+                    <div class="breakage__item-price">~ от 550 ₽</div>
+                </div>
+            </div>
+            <div id="form" class="breakage__item-wrapper col-md-6" >
+                <div class="breakage__item breakage__item_8">
+                    <div class="breakage__form">
+                        <div class="breakage__form-title">Оставьте заявку</div>
+                        <div class="breakage__form-subtitle">И мы перезвоним в течение 2-х минут</div>
+                        <div class="form">
+                            <form action="/good/" method="post" class="sltop__form ">
+                                {% csrf_token %}
+                                <div class='input-wrapper'>
+                                        <span>
+                                            <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон'
+                                                   required>
+                                        </span>
+                                    <button type='submit' class='submit darken-hover' >Оставить заявку</button>
+                                </div>
+                            </form>
+                            <small>
+                                Нажимая кнопку “Оставить заявку”, я соглашаюсь на обработку персональных
+                                данных
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Почему стоит выбрать нас? -->
+<section id="features" class="features section-padding section-padding-bottom">
+    <div class="container">
+        <h2 class="features__title title">Почему стоит выбрать нас?</h2>
+        <div class="features__row">
+            <div class="features__img">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/features-img.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/features-img.png' %}" alt="Электромонтажные работы">
+                </picture>
+            </div>
+            <div class="features-wrapper">
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='gear'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/gear/sprite.svg' %} #gear"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Сертифицированное оборудование в наличии и под заказ</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='clock'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/clock/sprite.svg' %} #clock"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Выезд мастера – от 30 минут.</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='chip'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/chip/sprite.svg' %} #chip"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Собственный склад: розетки, автоматы, кабель всегда в наличии</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='gem'>
+                            <use xlink:href=" {% static 'land/assetsById/1089/assets/gem/sprite.svg' %} #gem"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Опытные мастера: у каждого специалиста более 9 лет опыта</div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='free'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/free/sprite.svg' %} #free"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">
+                        Диагностика бесплатная
+                    </div>
+                </div>
+                <div class="features__item">
+                    <div class="features__item-icon">
+                        <svg class='pay'>
+                            <use xlink:href="{% static 'land/assetsById/1089/assets/pay/sprite.svg' %} #pay"></use>
+                        </svg>
+                    </div>
+                    <div class="features__item-text">Наличный и безналичный расчет
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Доставка техники курьером -->
+<section id="offer" class="offer">
+    <picture>
+        <source srcset="{% static 'land/assetsById/1089/assets/images/offer-bg.webp' %}" type="image/webp">
+        <img src="{% static 'land/assetsById/1089/assets/images/offer-bg.jpg' %}" class="offer__bg" alt="Выездной ремонт электрики">
+    </picture>
+    <div class="container">
+        <div class="offer__col">
+            <h2 class="offer__title">
+                90% неисправностей устраняем
+                с выездом на дом в день обращения,
+                для сложных случаев
+                выполняем электромонтаж
+                под ключ
+            </h2>
+            <div class="offer__subtitle">
+               <!-- В пределах г. Тольятти -->
+            </div>
+            <div class="form offer__form">
+                <form action="/good/" method="post" class="sltop__form">
+                    {% csrf_token %}
+                    <div class='input-wrapper'>
+                            <span>
+                                <input type='tel' class=”phone-input” name='phone' placeholder='Ваш телефон'  required>
+                            </span>
+                        <button type='submit' class='submit darken-hover'>Вызвать мастера</button>
+                    </div>
+                </form>
+                <small>
+                    Нажимая кнопку “Вызвать мастера”, я соглашаюсь на обработку персональных данных
+                </small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Цены на услуги -->
+<section id="price" class="price section-padding-top section-padding-bottom">
+    <div class="container">
+        <h2 class="price__title title">Цены на услуги электрика</h2>
+        <div class="price-wrapper">
+            <div class="price__item">
+                <div class="price__item-left">Диагностика</div>
+                <div class="price__item-right">
+                    Бесплатно
+                </div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена розетки</div>
+                <div class="price__item-right">от 350 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена выключателя</div>
+                <div class="price__item-right">от 350 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена автоматического выключателя</div>
+                <div class="price__item-right">от 400 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Установка УЗО</div>
+                <div class="price__item-right">от 600 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Монтаж электрощита</div>
+                <div class="price__item-right">от 3500 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена электропроводки (за точку)</div>
+                <div class="price__item-right">от 500 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Штробление стены под проводку (м.п.)</div>
+                <div class="price__item-right">от 300 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Монтаж люстры или светильника</div>
+                <div class="price__item-right">от 500 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Подключение бытовой техники</div>
+                <div class="price__item-right">от 600 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Поиск короткого замыкания</div>
+                <div class="price__item-right">от 800 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Замена счетчика</div>
+                <div class="price__item-right">от 1500 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Устройство заземления</div>
+                <div class="price__item-right">от 2500 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Прокладка кабеля (за метр)</div>
+                <div class="price__item-right">от 100 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Подключение варочной панели или духовки</div>
+                <div class="price__item-right">от 800 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Электромонтаж под ключ (кв.м)</div>
+                <div class="price__item-right">от 350 ₽</div>
+            </div>
+            <div class="price__item">
+                <div class="price__item-left">Аварийный выезд электрика</div>
+                <div class="price__item-right">от 700 ₽</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Консультация -->
+<div class="consultation">
+    <div class="container">
+        <div class="consultation-wrapper">
+            <div class="consultation__img">
+                <picture>
+                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/consultation-img.webp' %}"
+                            type="image/webp">
+                    <img src="{% static 'land/assetsById/1089/assets/images/washer/consultation-img.png' %}" alt="Консультация электрика">
+                </picture>
+            </div>
+            <div class="consultation__text">
+                <p style="text-align: center;">✱ В указанную стоимость входит только работа мастера.
+                    Материалы (кабель, автоматы, розетки) оплачиваются отдельно.</p>
+                <br>
+                <p style="text-align: center;">✱ При отказе от ремонта оплачивается только диагностика в размере 500
+                    рублей.</p>
+                <br>
+                <p style="text-align: center;">✱ Итоговая стоимость зависит от скидки, сложности работы
+                    и стоимости материалов. Её озвучит мастер после полной диагностики.</p>
+                <br>
+                <!--                Звоните нам по телефону <a href="tel:+79179651264">+7 (917) 965-12-64</a> или-->
+                <!--                <span data-toggle='modal' data-target='#popup-call'>оставьте заявку</span> на сайте-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="promo"></div>
+
+<!-- Скидки -->
+<section id="discount" class="discount mobile-bg bg"
+         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
+    <div class="container">
+        <div class="discount-wrapper">
+            <h2 class="discount__title title title_white">Скидка 20% <br> до <span class="day">24</span>&nbsp;<span
+                    class="month"></span>
+            </h2>
+            <div class="discount__subtitle">До конца акции остается немного<br>
+                <!--                <div class="hours" id="hours">-->
+                <!--                    <span class="number"></span>-->
+                <!--                    <span class="text">часов</span>-->
+                <!--                </div>-->
+                <!--                <div class="minutes" id="minutes">-->
+                <!--                    <span class="number"></span>-->
+                <!--                    <span class="text">минут</span>-->
+                <!--                </div>-->
+            </div>
+            <div class="form discount__form">
+                <form action="/good/" method="post" class="sltop__form">
+                    {% csrf_token %}
+                    <input type="hidden" name="direction_id" value="2">
+                    <input type="hidden" name="offer_id" value="4">
+                    <div class='input-wrapper'>
+                        <span>
+                                <input type='tel' class="phone-input" name='phone' placeholder='Ваш телефон' required>
+                            </span>
+                        <button type='submit' class='submit darken-hover'>Получить скидку</button>
+                    </div>
+                </form>
+                <small>
+                    Нажимая кнопку “Получить скидку”, вы соглашаетесь на обработку персональных данных
+                </small>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Карта -->
+<section id="contact" class="contact section-padding-top">
+    <div class="container">
+        <h2 class="contact__title title">Работаем по Тольятти, Самаре и Уфе. <br>
+            <span>* Выезд за пределы города по договоренности</span></h2>
+    </div>
+    <!--        <div class="map" id="yamap" style="background: #f2f2f2;">-->
+    <!--            <script type="text/javascript" charset="utf-8" async-->
+    <!--                src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Aa5431f15352c671ada01cf1515a495a5c978e950072b38f63438b4147315b708&amp;width=100%25&amp;height=600&amp;lang=ru_RU&amp;scroll=true"></script>-->
+    <!--        </div>-->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1225645.241031237!2d49.0394147040958!3d53.1310471042625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4166195fcf54adbb%3A0x72ace821464d4d98!2z0KHQsNC80LDRgNGB0LrQsNGPINC-0LHQuy4!5e0!3m2!1sru!2sru!4v1728337443014!5m2!1sru!2sru"
+            width="100%" height="650" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+</section>
+
+<!-- Подвал -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-wrapper">
+            <div class="footer__logo">
+                <a href='#home' class='header__logo'><img style="max-width: 70%; "
+                                                          src="{% static 'other_imgs/logo.png' %}" alt="ЭлектроМастер — услуги электрика"></a>
+            </div>
+            <div class="footer__right">
+                <a href='tel:+79179651264' class='header__tel'>
+                    <!--                                <div class="header__tel-icon">-->
+                    <!--                                    <svg class='phone'>-->
+                    <!--                                        <use xlink:href='land/assetsById/1089/assets/phone/sprite.png#phone'></use>&ndash;&gt;-->
+                    <!--                                    </svg>-->
+                    <!--                                </div>-->
+                    <span>+7 (917) 965-12-64</span>
+                </a>
+                <a href="#home" class="footer__up scroll">
+                    <svg class='up'>
+                        <use xlink:href="{% static 'land/assetsById/1089/assets/up/sprite.svg' %} #up"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container footer__info">
+        <p>Агрофенин Никита Александрович</p>
+        <p>ИНН: 638207118094</p>
+        <p>пос.Подстепки ул.Лазурный переулок д.5 кв 36</p>
+    </div>
+</footer>
+
+<!-- Заказать звонок -->
+<div class="modal  popup popup-call" id="popup-call" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup__dialog" role="document">
+        <div class="modal-content popup__content">
+            <div class="popup__close close" data-dismiss="modal">&times;</div>
+            <div class="popup__title">Оставьте заявку</div>
+            <div class="popup__subtitle">Мы свяжемся с Вами в течение 30 секунд</div>
+            <form action="/good/" method="post" class="sltop__form popup__form form">
+                {% csrf_token %}
+                <span style="display: none;">
+                        <input type="hidden" class="modal-info">
+                    </span>
+                <span>
+                        <input name="phone" class="phone-input" maxlength="16" type="tel" placeholder="Ваш телефон"
+                               required>
+                    </span>
+                <button type="submit" class="submit darken-hover">Вызвать мастера</button>
+                <small>
+                    Нажимая кнопку “Вызвать мастера”, вы соглашаетесь на обработку персональных данных
+                </small>
+
+                <input type="hidden" name="work" value="на сайте есть акция - Скидка 20%">
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Popup прайс-лист -->
+<div class="modal popup popup-price" id="popup-price" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup__dialog" role="document">
+        <div class="modal-content popup__content">
+            <div class="popup__close close" onclick="closePricePopup()">&times;</div>
+            <div class="popup__title">Узнать точную стоимость</div>
+            <div class="popup__subtitle" id="popup-price-service"></div>
+            <form action="/good/" method="post" class="sltop__form popup__form form">
+                {% csrf_token %}
+                <input type="hidden" name="work" id="popup-price-work" value="">
+                <span>
+                    <input name="phone" class="phone-input" maxlength="16" type="tel" placeholder="Ваш телефон" required>
+                </span>
+                <button type="submit" class="submit darken-hover">Узнать стоимость</button>
+                <small>
+                    Нажимая кнопку, вы соглашаетесь на обработку персональных данных
+                </small>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Окно благодарности -->
+<div class="modal popup popup-thank" id="popup-thank" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog popup__dialog" role="document">
+        <div class="modal-content popup__content">
+            <div class="popup__close close" data-dismiss="modal" onclick="closePopup()">&times;</div>
+            <div class="popup__title">Заявка отправлена</div>
+            <div class="popup__subtitle">Мы свяжемся с Вами в течение 1 минуты</div>
+            <button onclick="closePopup()" class="submit darken-hover popup-thank__close">Ок</button>
+        </div>
+    </div>
+</div>
+
+<!-- Общие скрипты -->
+<script src="{% static 'land/assetsById/1089/assets/js/vendors.js' %}"></script>
+
+
+<!-- Основной js файл -->
+<script src="{% static 'land/assetsById/1089/assets/js/script.js' %}"></script>
+
+<style>
+    #yamap,
+    .yamap-psh {
+        overflow: hidden;
+        min-height: 490px;
+    }
+</style>
+
+
+<script>
+    var thread = {
+        "id": 0,
+        "type": 2,
+        "idp": 0,
+        "is_pm": 0,
+        "tool_type": 1,
+        "tool_id": 1089,
+        "data": {"city_id": [0], "tel": "+7 (111) 111-11-11", "new_offer_id": 4, "direction_id": 2}
+    };
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const forms = document.querySelectorAll('.sltop__form');
+
+        forms.forEach(form => {
+            form.addEventListener('submit', async function (event) {
+                event.preventDefault();
+
+                // Фикс 6: блокировка повторной отправки
+                const btn = form.querySelector('button[type="submit"]');
+                if (btn.disabled) return;
+                const originalText = btn.textContent;
+                btn.disabled = true;
+                btn.textContent = 'Отправка...';
+
+                // Фикс 2: CSRF из текущей формы
+                const formData = new FormData(form);
+                const csrfInput = form.querySelector('[name=csrfmiddlewaretoken]');
+                const csrfToken = csrfInput ? csrfInput.value : '';
+
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'X-CSRFToken': csrfToken,
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                    });
+                    const data = await response.json();
+                    if (response.ok && data.success) {
+                        // Фикс 7: метрика через JS вместо мёртвого onsubmit
+                        if (typeof ym === 'function') {
+                            ym(99158784, 'reachGoal', 'zayavka');
+                        }
+                        showPopup();
+                        form.reset();
+                    } else {
+                        // Фикс 5: показ ошибки пользователю
+                        showError(form, data.message || 'Произошла ошибка. Попробуйте ещё раз.');
+                    }
+                } catch (error) {
+                    // Фикс 5: показ ошибки при сетевом сбое
+                    showError(form, 'Ошибка соединения. Попробуйте позже или позвоните нам.');
+                } finally {
+                    // Фикс 6: разблокировка кнопки
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            });
+        });
+
+        function showPopup() {
+            const popup = document.getElementById('popup-thank');
+            popup.style.display = 'block';
+        }
+
+        function showError(form, message) {
+            // Удалить предыдущую ошибку если есть
+            const prev = form.parentElement.querySelector('.form-error');
+            if (prev) prev.remove();
+            const el = document.createElement('div');
+            el.className = 'form-error';
+            el.textContent = message;
+            el.style.cssText = 'color:#ff4444;font-size:13px;text-align:center;margin-top:8px;';
+            form.parentElement.appendChild(el);
+            setTimeout(function() { el.remove(); }, 5000);
+        }
+    });
+
+    function closePopup() {
+        const popup = document.getElementById('popup-thank');
+        popup.style.display = 'none';
+    }
+
+</script>
+
+
+<!-- jquery.inputmask удалён — маска телефона реализована в script.js -->
+<!-- promise-polyfill удалён — не нужен для современных браузеров -->
+
+
+<div class="site-policy-line">
+    <div class="site-policy-line-inner">
+        Информация на данном ресурсе не является публичной офертой.
+        <a href="/politika/" target="_blank">
+            Политика конфиденциальности
+        </a>
+    </div>
+</div>
+
+<style>
+    .site-policy-line {
+        padding: 3px 10px;
+        background: #eee;
+        border-top: 1px solid #ccc;
+    }
+
+    .site-policy-line .site-policy-line-inner {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 12px;
+        line-height: 18px;
+        color: #333;
+    }
+
+    .site-policy-line .site-policy-line-inner a {
+        color: #0036d0;
+        text-decoration: underline;
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var item = document.querySelector('.dropdown-menu-item');
+    if (!item) return;
+
+    // Dropdown toggle на мобилке
+    item.querySelector('a').addEventListener('click', function(e) {
+        if (window.innerWidth <= 991) {
+            e.preventDefault();
+            item.classList.toggle('open');
+        }
+    });
+
+    // Закрытие мобильного меню при клике на CTA или ссылки подменю
+    var mobileMenu = document.querySelector('.header__mobile-menu');
+    var menuLink = document.querySelector('.menu-link');
+    var closeMobile = function() {
+        if (window.innerWidth <= 991 && mobileMenu && menuLink) {
+            mobileMenu.classList.remove('header__mobile-menu_active');
+            menuLink.classList.remove('menu-link_active');
+            item.classList.remove('open');
+        }
+    };
+    var cta = document.querySelector('.mobile-menu-cta');
+    if (cta) cta.addEventListener('click', closeMobile);
+    document.querySelectorAll('.dropdown-submenu a').forEach(function(a) {
+        a.addEventListener('click', closeMobile);
+    });
+});
+
+// Popup прайс-лист — клик по цене
+document.querySelectorAll('.price__item').forEach(function(item) {
+    var right = item.querySelector('.price__item-right');
+    if (!right) return;
+    right.addEventListener('click', function() {
+        var left = item.querySelector('.price__item-left');
+        var service = left ? left.textContent.trim() : '';
+        var price = right.textContent.trim();
+        document.getElementById('popup-price-service').textContent = service + ' — ' + price;
+        document.getElementById('popup-price-work').value = 'Прайс: ' + service + ' (' + price + ')';
+        document.getElementById('popup-price').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Закрытие popup прайса
+document.getElementById('popup-price').addEventListener('click', function(e) {
+    if (e.target === this) closePricePopup();
+});
+</script>
+
+<script>
+function closePricePopup() {
+    document.getElementById('popup-price').style.display = 'none';
+    document.body.style.overflow = '';
+}
+</script>
+
+<style>
+.popup-price {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 1000;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+}
+.popup-price[style*="display: block"] {
+    display: flex !important;
+}
+</style>
+<!--f-->
+</body>
+</html>

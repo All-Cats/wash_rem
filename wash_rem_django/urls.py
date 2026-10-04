@@ -23,6 +23,7 @@ from wash_rem import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index),
+    path("remont-pk/", views.index_rpk, name='index_rpk'),
     path("good/", views.send_notif),
     path("politika/", views.politika),
 ]
