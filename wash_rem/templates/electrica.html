@@ -120,6 +120,16 @@
             .dropdown-submenu a[aria-current="page"] {
                 color: rgba(255, 255, 255, 0.35);
             }
+        }
+
+        /* Тематические фото: скругляем, раз это кадры, а не вырезки */
+        .header__img img,
+        .features__img img,
+        .consultation__img img,
+        .breakage__item-img {
+            border-radius: 16px;
+        }
+        @media (max-width: 991px) {
 
             /* Разделители между пунктами */
             .header__menu li {
@@ -307,7 +317,7 @@
         </div>
     </div>
     <div class="header__main mobile-bg bg"
-         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/test-2.jpg' %})">
+         style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url({% static 'land/assetsById/1089/assets/images/electrica/hero-bg.jpg' %})">
         <div class="container">
             <div class="header-wrapper">
                 <div class="header__col header__main-left">
@@ -346,11 +356,7 @@
                             </svg>
                         </div>
                         <div class="header__img">
-                            <picture>
-                                <source srcset="{% static 'land/assetsById/1089/assets/images/washer/header-img.webp' %}"
-                                        type="image/webp">
-                                <img src="{% static 'land/assetsById/1089/assets/images/washer/header-img.png' %}" alt="Электрик выполняет монтаж проводки">
-                            </picture>
+                            <img src="{% static 'land/assetsById/1089/assets/images/electrica/hero.jpg' %}" alt="Электрик работает в распределительном щитке">
                         </div>
                     </div>
                 </div>
@@ -478,12 +484,8 @@
         <div class="row breakage-wrapper">
             <div class="breakage__item-wrapper col-md-6">
                 <div class="breakage__item breakage__item_1">
-                    <picture>
-                        <source srcset="{% static 'land/assetsById/1089/assets/images/washer/breakage/1.webp' %}"
-                                type="image/webp">
-                        <img src="{% static 'land/assetsById/1089/assets/images/washer/breakage/1.png' %}"
-                             class="breakage__item-img" alt="Диагностика и ремонт электропроводки" style="bottom: 0">
-                    </picture>
+                    <img src="{% static 'land/assetsById/1089/assets/images/electrica/breakage-1.jpg' %}"
+                         class="breakage__item-img" alt="Диагностика и ремонт электропроводки" style="bottom: 0">
                     <div class="breakage__item-title">Нет света в квартире</div>
                     <ul class="breakage__item-list">
                         <li>Диагностика проводки</li>
@@ -539,12 +541,8 @@
             </div>
             <div class="breakage__item-wrapper col-md-6">
                 <div class="breakage__item breakage__item_6">
-                    <picture>
-                        <source srcset="{% static 'land/assetsById/1089/assets/images/washer/breakage/2.webp' %}"
-                                type="image/webp">
-                        <img src="{% static 'land/assetsById/1089/assets/images/washer/breakage/2.png' %}"
+                    <img src="{% static 'land/assetsById/1089/assets/images/electrica/breakage-2.jpg' %}"
                              class="breakage__item-img" alt="Ремонт электрощита">
-                    </picture>
                     <div class="breakage__item-title">Запах гари от проводки</div>
                     <ul class="breakage__item-list">
                         <li>Диагностика проводки</li>
@@ -620,11 +618,7 @@
         <h2 class="features__title title">Почему стоит выбрать нас?</h2>
         <div class="features__row">
             <div class="features__img">
-                <picture>
-                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/features-img.webp' %}"
-                            type="image/webp">
-                    <img src="{% static 'land/assetsById/1089/assets/images/washer/features-img.png' %}" alt="Электромонтажные работы">
-                </picture>
+                <img src="{% static 'land/assetsById/1089/assets/images/electrica/features.jpg' %}" alt="Электрик проверяет напряжение мультиметром">
             </div>
             <div class="features-wrapper">
                 <div class="features__item">
@@ -803,11 +797,7 @@
     <div class="container">
         <div class="consultation-wrapper">
             <div class="consultation__img">
-                <picture>
-                    <source srcset="{% static 'land/assetsById/1089/assets/images/washer/consultation-img.webp' %}"
-                            type="image/webp">
-                    <img src="{% static 'land/assetsById/1089/assets/images/washer/consultation-img.png' %}" alt="Консультация электрика">
-                </picture>
+                <img src="{% static 'land/assetsById/1089/assets/images/electrica/consultation.jpg' %}" alt="Установка розеток и выключателей">
             </div>
             <div class="consultation__text">
                 <p style="text-align: center;">✱ В указанную стоимость входит только работа мастера.
@@ -830,7 +820,7 @@
 
 <!-- Скидки -->
 <section id="discount" class="discount mobile-bg bg"
-         style="background-image: url({% static 'land/assetsById/1089/assets/images/washer/discount-bg.jpg' %})">
+         style="background-image: url({% static 'land/assetsById/1089/assets/images/electrica/discount-bg.jpg' %})">
     <div class="container">
         <div class="discount-wrapper">
             <h2 class="discount__title title title_white">Скидка 20% <br> до <span class="day">24</span>&nbsp;<span
